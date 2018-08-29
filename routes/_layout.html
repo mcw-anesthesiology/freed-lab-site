@@ -1,0 +1,61 @@
+<div class="container">
+	<Header segment={child.segment} />
+
+	<main>
+		<svelte:component this={child.component} {...child.props}/>
+	</main>
+
+	<Footer segment={child.segment} />
+</div>
+
+<style>
+	:global(html, body) {
+		margin: 0;
+		padding: 0;
+	}
+
+	.container {
+
+	}
+
+	main {
+		padding: 2em;
+	}
+
+	@supports (display: grid) {
+
+		.container {
+			display: grid;
+			grid-template-areas:
+				'header'
+				'main'
+				'footer';
+			grid-template-rows: 200px 1fr 200px;
+			min-height: 100vh;
+		}
+
+		main {
+			grid-area: main;
+		}
+
+		.container > :global(header) {
+			grid-area: header;
+		}
+
+		.container > :global(footer) {
+			grid-area: footer;
+		}
+	}
+</style>
+
+<script>
+	import Header from '../src/components/Header.html';
+	import Footer from '../src/components/Footer.html';
+
+	export default {
+		components: {
+			Header,
+			Footer
+		}
+	};
+</script>

@@ -1,0 +1,34 @@
+<footer>
+	<Nav {segment} />
+</footer>
+
+<style>
+	footer {
+		background: #ccc;
+	}
+
+	footer :global(nav li) {
+		list-style: none;
+	}
+
+	footer :global(nav a) {
+		text-decoration: none;
+	}
+
+	footer :global(nav a.selected) {
+		position: relative;
+		display: inline-block;
+		pointer-events: none;
+		opacity: 0.75;
+	}
+</style>
+
+<script>
+	import Nav from './Nav.html';
+
+	export default {
+		components: {
+			Nav
+		}
+	};
+</script>

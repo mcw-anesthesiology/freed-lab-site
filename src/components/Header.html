@@ -1,0 +1,46 @@
+<header>
+	<Nav {segment} />
+</header>
+
+<style>
+	header {
+		border-bottom: 1px solid #444;
+		font-weight: 300;
+		padding: 0 1em;
+	}
+
+	header :global(nav ul) {
+		display: flex;
+		justify-content: flex-end;
+		margin: 0;
+		padding: 0;
+	}
+
+	header :global(nav li) {
+		list-style: none;
+	}
+
+	header :global(nav a.selected) {
+		position: relative;
+		display: inline-block;
+		pointer-events: none;
+		opacity: 0.75;
+	}
+
+	header :global(nav a) {
+		text-decoration: none;
+		padding: 1em 0.5em;
+		display: block;
+	}
+</style>
+
+<script>
+	import Nav from './Nav.html';
+
+	export default {
+		components: {
+			Nav
+		}
+	};
+</script>
+
