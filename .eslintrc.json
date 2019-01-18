@@ -10,9 +10,13 @@
 		"browser": true,
 		"es6": true
 	},
-	"plugins": ["react"],
+	"plugins": [
+		"import",
+		"react"
+	],
 	"extends": [
 		"eslint:recommended",
+		"plugin:import/errors",
 		"plugin:react/recommended"
 	],
 	"rules": {
@@ -23,6 +27,7 @@
 		"no-spaced-func": "warn",
 		"comma-style": "warn",
 		"comma-spacing": "warn",
-		"key-spacing": "warn"
+		"key-spacing": "warn",
+		"react/prop-types": [0]
 	}
 }

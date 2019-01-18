@@ -1,0 +1,26 @@
+- name: Julie Freed
+  postNominal:
+    - MD
+    - PhD
+  title: Assistant Professor, Principal Investigator
+  bio: |
+    Dr. Freed is an Assistant Professor and Cardiac Anesthesiologist
+    in the Department of Anesthesiology.
+  image: freed.jpg
+- name: Mary Schulz
+  title: Research Technologist III
+  bio: |
+    Mary joined the Freed Lab as a Research Technologist in 2017.
+  image: schulz.jpg
+- name: Kelsey Walters
+  title: Medical Student
+  bio: |
+    Kelsey joined the Freed Lab as a medical student in MCW's Honors in
+    Research Program in 2017.
+  image: walters.jpg
+- name: Boran Katunaric
+  postNominal:
+    - MD
+  title: Post-Doctoral Fellow
+  bio: |
+    Dr. Katunaric joined the Freed Lab as a Post-Doctoral Fellow in 2018.

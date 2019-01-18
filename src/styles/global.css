@@ -1,0 +1,57 @@
+/** @format */
+
+:root,
+html {
+
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f26161;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+
+	& a {
+		text-decoration: none;
+		opacity: 0.8;
+
+		&,
+		&:visited {
+			color: #fafafa;
+		}
+
+		&:hover,
+		&:focus,
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	& > a {
+		font-size: 1.5em;
+		margin: 0.5em;
+	}
+
+	& nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+
+		& li {
+			margin: 0.5em;
+			list-style: none;
+		}
+	}
+}
+
+h1, h2, h3 {
+	font-family: 'Source Sans Pro', sans-serif;
+}
