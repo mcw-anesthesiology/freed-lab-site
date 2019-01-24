@@ -50,12 +50,41 @@ module.exports = {
 				]
 			}
 		},
-		'gatsby-transformer-yaml',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				path: './src/data'
 			}
-		}
+		},
+		{
+			resolve: 'gatsby-plugin-copy-files',
+			options: {
+				source: `${__dirname}/src/images`,
+				destination: '/images'
+			}
+		},
+		{
+			resolve: 'gatsby-transformer-remark',
+			options: {
+				plugins: [
+					{
+						resolve: 'gatsby-remark-images',
+						options: {
+							maxWidth: 500
+						}
+					}
+				]
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-create-client-paths',
+			options: {
+				prefixes: [
+					'/projects/*'
+				]
+			}
+		},
+		'gatsby-transformer-yaml',
+		'add-team-html-bio'
 	]
 };

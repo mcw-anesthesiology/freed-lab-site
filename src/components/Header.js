@@ -3,17 +3,33 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
+import '../styles/header.css';
+
 export default function Header({ siteTitle }) {
 	return (
 		<header>
-			<Link to="/">{siteTitle}</Link>
+			<HeaderLink to="/">{siteTitle}</HeaderLink>
 			<nav>
 				<ul>
 					<li>
-						<Link to="/goals">Goals</Link>
+						<HeaderLink to="/goals">Goals</HeaderLink>
+					</li>
+					<li>
+						<HeaderLink to="/projects">Projects</HeaderLink>
+					</li>
+					<li>
+						<HeaderLink to="/team">Team</HeaderLink>
 					</li>
 				</ul>
 			</nav>
 		</header>
 	);
+}
+
+function isActive({ isCurrent }) {
+	return isCurrent ? { className: 'active' } : null;
+}
+
+export function HeaderLink(props) {
+	return <Link getProps={isActive} {...props} />;
 }

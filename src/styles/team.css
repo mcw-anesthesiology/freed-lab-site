@@ -1,0 +1,48 @@
+.team-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.team-member {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-basis: 200px;
+
+	& > * {
+		margin-bottom: 0.5em;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+
+	& img {
+		height: 200px;
+		object-fit: cover;
+	}
+
+	& .name {
+
+		& .post-nominal-titles {
+			color: #444;
+		}
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	.bio {
+
+	}
+}
+
+@supports (display: grid) {
+	.team-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 2em;
+	}
+}

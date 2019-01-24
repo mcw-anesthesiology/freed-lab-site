@@ -2,47 +2,44 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 import Layout from '../components/Layout.js';
+import '../styles/team.css';
 
 export default function Team({ data }) {
-	const images = data.allFile.edges.map(e => e.node);
-	const teamMembers = data.allTeamYaml.edges.map(e => {
-		const member = {
-			...e.node
-		};
-
-		if (member.image) {
-			const node = images.find(
-				i => member.image === `${i.name}.${i.extension}`
-			);
-			if (node) {
-				member.fluid = node.childImageSharp.fluid;
-			}
-		}
-
-		return member;
-	});
+	const teamMembers = data.allTeamYaml.edges.map(e => e.node);
 
 	return (
 		<Layout>
 			<h1>Team</h1>
 
-			<div>
+			<ul className="team-list">
 				{teamMembers.map(m => (
 					<TeamMember key={m.id} {...m} />
 				))}
-			</div>
-			<pre>{JSON.stringify(data.allTeamYaml.edges)}</pre>
+			</ul>
 		</Layout>
 	);
 }
 
-export function TeamMember({ name, postNominal, title, bio, image, fluid }) {
+export function TeamMember({ name, postNominal, title, bioHtml, image }) {
+	const imgSrc = `/images/team/${image || 'placeholder.jpg'}`;
+
 	return (
-		<li>
-			<span className="name">{name}</span>
+		<li className="team-member">
+			<img src={imgSrc} alt="" width="150" />
+			<span className="name">
+				{name}
+				{' '}
+				{postNominal && postNominal.length > 0 && (
+					<span className="post-nominal-titles">
+						{postNominal.join(', ')}
+					</span>
+				)}
+			</span>
+			<span className="title">{title}</span>
+
+			<div className="bio" dangerouslySetInnerHTML={{__html: bioHtml}}></div>
 		</li>
 	);
 }
@@ -56,22 +53,8 @@ export const query = graphql`
 					name
 					postNominal
 					title
-					bio
+					bioHtml
 					image
-				}
-			}
-		}
-		allFile(filter: { relativeDirectory: { eq: "team" } }) {
-			edges {
-				node {
-					id
-					name
-					extension
-					childImageSharp {
-						fluid(maxWidth: 300) {
-							...GatsbyImageSharpFluid
-						}
-					}
 				}
 			}
 		}
