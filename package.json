@@ -7,6 +7,8 @@
     "start": "yarn dev",
     "dev": "gatsby develop",
     "build": "gatsby build",
+    "deploy": "now",
+    "now-build": "gatsby build",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
@@ -32,6 +34,7 @@
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1",
     "react-helmet": "^5.2.0",
+    "remark-html": "^9.0.0",
     "typeface-open-sans": "^0.0.54",
     "typeface-source-sans-pro": "^0.0.54"
   },
