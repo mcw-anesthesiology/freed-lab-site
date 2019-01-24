@@ -11,8 +11,16 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+#layout {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 main {
+	box-sizing: border-box;
 	padding: 1em;
+	flex-grow: 1;
 }
 
 h1,

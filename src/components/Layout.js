@@ -11,25 +11,25 @@ import 'typeface-source-sans-pro';
 import 'typeface-open-sans';
 import '../styles/global.css';
 
-const Layout = ({ children }) => (
-	<StaticQuery
-		query={graphql`
-			query SiteTitleQuery {
-				site {
-					siteMetadata {
-						title
+export default function Layout({ children }) {
+	return (
+		<StaticQuery
+			query={graphql`
+				query SiteTitleQuery {
+					site {
+						siteMetadata {
+							title
+						}
 					}
 				}
-			}
-		`}
-		render={data => (
-			<>
-				<Header siteTitle={data.site.siteMetadata.title} />
-				<main>{children}</main>
-				<Footer />
-			</>
-		)}
-	/>
-);
-
-export default Layout;
+			`}
+			render={data => (
+				<div id="layout">
+					<Header siteTitle={data.site.siteMetadata.title} />
+					<main>{children}</main>
+					<Footer />
+				</div>
+			)}
+		/>
+	);
+}

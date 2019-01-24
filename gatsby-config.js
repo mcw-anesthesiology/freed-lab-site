@@ -6,9 +6,10 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`
+		title: 'Freed Lab',
+		description:
+			"The informational site for Dr. Julie Freed's Research Lab",
+		author: 'Jacob Mischka <jmischka@mcw.edu>'
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -79,9 +80,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-create-client-paths',
 			options: {
-				prefixes: [
-					'/projects/*'
-				]
+				prefixes: ['/projects/*']
 			}
 		},
 		'gatsby-transformer-yaml',
