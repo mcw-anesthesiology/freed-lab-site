@@ -29,3 +29,13 @@ h3 {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
 }
+
+.hero {
+	height: 200px;
+}
+
+@media (min-height: 700px) {
+	.hero {
+		height: 300px;
+	}
+}
