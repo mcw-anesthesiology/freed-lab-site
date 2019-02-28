@@ -9,7 +9,40 @@ module.exports = {
 		title: 'Freed Lab',
 		description:
 			"The informational site for Dr. Julie Freed's Research Lab",
-		author: 'Jacob Mischka <jmischka@mcw.edu>'
+		author: 'Jacob Mischka <jmischka@mcw.edu>',
+		contactUsers: [
+			{
+				name: 'Mary Schulz',
+				email: 'maschulz@mcw.edu',
+				phone: '414-955-5854'
+			}
+		],
+		attributions: [
+			{
+				name: 'Project Launch',
+				image: '/images/projects.svg',
+				author: 'Arfan Khan Kamol',
+				link: 'https://thenounproject.com/icon/2038872/'
+			},
+			{
+				name: 'Goals',
+				image: '/images/goals.svg',
+				author: 'Tawny Whatmore, IE',
+				link: 'https://thenounproject.com/icon/982021/'
+			},
+			{
+				name: 'Contact',
+				image: '/images/contact.svg',
+				author: 'Ralf Schmitzer, DE',
+				link: 'https://thenounproject.com/icon/631929/'
+			},
+			{
+				name: 'Team',
+				image: '/images/team.svg',
+				author: 'Creative Stall, PK',
+				link: 'https://thenounproject.com/icon/1091926/'
+			}
+		]
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -81,6 +114,14 @@ module.exports = {
 			resolve: 'gatsby-plugin-create-client-paths',
 			options: {
 				prefixes: ['/projects/*']
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /icons/
+				}
 			}
 		},
 		'gatsby-transformer-yaml',

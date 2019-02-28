@@ -1,0 +1,33 @@
+main.home {
+
+	& nav ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 0;
+
+		@supports (display: grid) {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		}
+
+		font-size: 2em;
+
+		& li {
+			list-style: none;
+			text-align: center;
+		}
+
+		& a {
+			text-decoration: none;
+
+			&, &:visited {
+				color: rgba(0, 0, 0, 0.75);
+			}
+
+			&:hover {
+				color: rgba(0, 0, 0, 0.95);
+			}
+		}
+	}
+}

@@ -19,7 +19,10 @@ population.  This clinical trial will be the first to examine the effects of
 ischemic preconditioning (IPC) on preoperative and postoperative frailty in
 elderly colon cancer patients.
 
-Collaborators:  Matt Durand PhD, Physical Medicine & Rehabilitation
-                           Carrie Peterson MD, MS Department of Surgery
-                           Kirk Ludwig MD, Department of Surgery
-                           Timothy Ridolfi MD, Department of Surgery
+
+## Collaborators:
+
+- Matt Durand PhD, Physical Medicine & Rehabilitation
+- Carrie Peterson MD, MS Department of Surgery
+- Kirk Ludwig MD, Department of Surgery
+- Timothy Ridolfi MD, Department of Surgery

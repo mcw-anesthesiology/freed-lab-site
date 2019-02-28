@@ -28,7 +28,13 @@ export function ProjectsList({ projects }) {
 
 			<ul className="projects-list">
 				{projects.map(project => (
-					<ProjectListItem key={project.id} slug={project.id} image={project.frontmatter.image} title={project.frontmatter.title} excerpt={project.excerpt} />
+					<ProjectListItem
+						key={project.id}
+						slug={project.fields.slug}
+						image={project.frontmatter.image}
+						title={project.frontmatter.title}
+						excerpt={project.excerpt}
+					/>
 				))}
 			</ul>
 		</div>
@@ -36,27 +42,24 @@ export function ProjectsList({ projects }) {
 }
 
 export function ProjectListItem({ title, slug, excerpt, image }) {
-
 	return (
 		<li className="project-list-item">
 			<Link to={slug}>
-				<h3>
-					{title}
-				</h3>
+				<h3>{title}</h3>
 				<img src={image} alt="" />
-				<div dangerouslySetInnerHTML={{__html: excerpt}}></div>
+				<div dangerouslySetInnerHTML={{ __html: excerpt }} />
 			</Link>
 		</li>
 	);
 }
 
 export function Project({ slug, projects }) {
-	const project = projects.find(p => p.id === slug);
+	const project = projects.find(p => p.fields.slug.includes(slug));
 
 	return (
 		<div>
 			<h1>{project.frontmatter.title}</h1>
-			<div dangerouslySetInnerHTML={{__html: project.html}}></div>
+			<div dangerouslySetInnerHTML={{ __html: project.html }} />
 		</div>
 	);
 }
@@ -64,15 +67,14 @@ export function Project({ slug, projects }) {
 export const query = graphql`
 	query {
 		allMarkdownRemark(
-			filter: {
-				fileAbsolutePath: {
-					regex: "/data\/projects/"
-				}
-			}
+			filter: { fileAbsolutePath: { regex: "/data/projects/" } }
 		) {
 			edges {
 				node {
 					id
+					fields {
+						slug
+					}
 					frontmatter {
 						title
 						image

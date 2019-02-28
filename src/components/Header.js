@@ -3,6 +3,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
+import ContactIcon from '../images/icons/contact.svg';
+import GoalsIcon from '../images/icons/goals.svg';
+import ProjectsIcon from '../images/icons/projects.svg';
+import TeamIcon from '../images/icons/team.svg';
+
 import '../styles/header.css';
 
 export default function Header({ siteTitle }) {
@@ -12,13 +17,28 @@ export default function Header({ siteTitle }) {
 			<nav>
 				<ul>
 					<li>
-						<HeaderLink to="/goals">Goals</HeaderLink>
+						<HeaderLink to="/goals">
+							<GoalsIcon />
+							Goals
+						</HeaderLink>
 					</li>
 					<li>
-						<HeaderLink to="/projects">Projects</HeaderLink>
+						<HeaderLink to="/projects">
+							<ProjectsIcon />
+							Projects
+						</HeaderLink>
 					</li>
 					<li>
-						<HeaderLink to="/team">Team</HeaderLink>
+						<HeaderLink to="/team">
+							<TeamIcon />
+							Team
+						</HeaderLink>
+					</li>
+					<li>
+						<HeaderLink to="/contact">
+							<ContactIcon />
+							Contact
+						</HeaderLink>
 					</li>
 				</ul>
 			</nav>

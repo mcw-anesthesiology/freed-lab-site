@@ -32,10 +32,23 @@ h3 {
 
 .hero {
 	height: 200px;
+
+	& .gatsby-image-wrapper {
+		height: 100%;
+	}
 }
 
 @media (min-height: 700px) {
 	.hero {
 		height: 300px;
 	}
+}
+
+nav svg {
+	height: 1.25em;
+	width: 1.25em;
+	margin-right: 0.25em;
+	vertical-align: middle;
+	fill: currentColor;
+	stroke: currentColor;
 }
