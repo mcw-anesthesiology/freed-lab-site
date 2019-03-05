@@ -120,7 +120,15 @@ module.exports = {
 			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {
-					include: /icons/
+					include: /icons/,
+					omitKeys: [
+						'xmlns\\w+',
+						'inkscape\\w+',
+						'fitMargin\\w+',
+						'rdf\\w+',
+						'sodipodiDocname',
+						'bottomLeftOrigin'
+					]
 				}
 			}
 		},
