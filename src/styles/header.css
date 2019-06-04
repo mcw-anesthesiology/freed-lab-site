@@ -1,9 +1,11 @@
+/** @format */
+
 header {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #f26161;
+	background-color: var(--header-background-color);
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
 
@@ -45,4 +47,3 @@ header {
 		}
 	}
 }
-

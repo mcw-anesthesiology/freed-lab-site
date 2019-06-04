@@ -9,6 +9,7 @@
     "build": "gatsby build",
     "deploy": "now",
     "now-build": "gatsby build",
+    "now-dev": "gatsby develop --port $PORT",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
@@ -43,6 +44,7 @@
     "eslint": "^5.12.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-react": "^7.12.4",
+    "postcss-css-variables": "^0.12.0",
     "prettier": "^1.15.2"
   },
   "repository": {

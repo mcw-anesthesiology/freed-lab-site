@@ -1,10 +1,19 @@
 /** @format */
 
-:root,
 html {
 	--text-color: black;
 	--heading-color: green;
 	--border-color: #ddd;
+
+	--mcw-anesth-dark-green: #006f66;
+	--mcw-anesth-light-green: #58b947;
+	--mcw-blue: #34596b;
+
+	--mcw-anesth-dark-green-rgb: 0, 111, 102;
+	--mcw-anesth-light-green-rgb: 88, 185, 71;
+	--mcw-blue-rgb: 52, 89, 107;
+
+	--header-background-color: var(--mcw-anesth-dark-green);
 }
 
 body {

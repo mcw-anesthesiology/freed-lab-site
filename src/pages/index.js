@@ -54,9 +54,7 @@ export default function IndexPage({ data }) {
 
 export const query = graphql`
 	query IndexQuery {
-		heroImage: file(
-			relativePath: { eq: "hero/research.jpg" }
-		) {
+		heroImage: file(relativePath: { eq: "hero/freed-and-schulz.jpg" }) {
 			childImageSharp {
 				fluid(maxWidth: 1920) {
 					...GatsbyImageSharpFluid

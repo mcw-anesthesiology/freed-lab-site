@@ -6,7 +6,7 @@
   bio: |
     Dr. Freed is an Assistant Professor and Cardiac Anesthesiologist
     in the Department of Anesthesiology.
-  image: freed.jpg
+  image: freed-coat.jpg
 - name: Mary Schulz
   title: Research Technologist III
   bio: |
@@ -24,3 +24,20 @@
   title: Post-Doctoral Fellow
   bio: |
     Dr. Katunaric joined the Freed Lab as a Post-Doctoral Fellow in 2018.
+- name: Kate Cohen
+  postNominal:
+    - MD
+  title: Internal Medicine Resident
+  bio: |
+    Dr. Cohen is an internal medicine resident and will be joining the lab on July 1st. For two years she is supported by an NIH R38 grant. Following her two years in the lab she will continue on as a Cardiology fellow at Froedtert and MCW.
+  image: cohen.jpg
+- name: Forrest Stehula
+  title: Medical Student Summer Research Program trainee
+  bio: |
+    Forrest will be in the lab during summer 2019. He is supported by an NIH T35 grant from the NHLBI.
+  image: stehula.jpg
+- name: Sarah Meeuwsen
+  title: Medical Student Summer Research Program trainee
+  bio: |
+    Sarah will be conducting clinical trial studies for the summer of 2019. She is supported by an NIH T35 grant from the NIA.
+  image: meeuwsen.jpg

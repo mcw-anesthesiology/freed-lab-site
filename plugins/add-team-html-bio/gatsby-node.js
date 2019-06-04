@@ -27,6 +27,17 @@ function toHtml(markdown) {
 	});
 }
 
+exports.onCreateNode = async ({ node, actions }) => {
+	if (node.internal.type === 'TeamYaml') {
+		const image = node.image || 'placeholder.jpg';
+		actions.createNodeField({
+			node,
+			name: 'image',
+			value: `../images/team/${image}`
+		});
+	}
+};
+
 exports.setFieldsOnGraphQLNodeType = ({ type }) => {
 	if (type.name === 'TeamYaml') {
 		return new Promise(resolve => {

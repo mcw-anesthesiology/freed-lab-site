@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../components/Layout.js';
 import '../styles/team.css';
@@ -22,15 +23,12 @@ export default function Team({ data }) {
 	);
 }
 
-export function TeamMember({ name, postNominal, title, bioHtml, image }) {
-	const imgSrc = `/images/team/${image || 'placeholder.jpg'}`;
-
+export function TeamMember({ name, postNominal, title, bioHtml, fields }) {
 	return (
 		<li className="team-member">
-			<img src={imgSrc} alt="" width="150" />
+			<Img fixed={fields.image.childImageSharp.fixed} />
 			<span className="name">
-				{name}
-				{' '}
+				{name}{' '}
 				{postNominal && postNominal.length > 0 && (
 					<span className="post-nominal-titles">
 						{postNominal.join(', ')}
@@ -39,7 +37,10 @@ export function TeamMember({ name, postNominal, title, bioHtml, image }) {
 			</span>
 			<span className="title">{title}</span>
 
-			<div className="bio" dangerouslySetInnerHTML={{__html: bioHtml}}></div>
+			<div
+				className="bio"
+				dangerouslySetInnerHTML={{ __html: bioHtml }}
+			/>
 		</li>
 	);
 }
@@ -55,6 +56,15 @@ export const query = graphql`
 					title
 					bioHtml
 					image
+					fields {
+						image {
+							childImageSharp {
+								fixed(width: 150, height: 200) {
+									...GatsbyImageSharpFixed
+								}
+							}
+						}
+					}
 				}
 			}
 		}
