@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .team-member {
@@ -9,6 +10,7 @@
 	flex-direction: column;
 	align-items: center;
 	flex-basis: 200px;
+	margin: 1em;
 
 	& > * {
 		margin-bottom: 0.5em;
@@ -19,8 +21,10 @@
 	}
 
 	& img {
-		height: 200px;
+		height: 150px;
+		width: 150px;
 		object-fit: cover;
+		border-radius: 50%;
 	}
 
 	& .name {
@@ -39,10 +43,14 @@
 	}
 }
 
-@supports (display: grid) {
+@supports (display: gridsdf) {
 	.team-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 		grid-gap: 2em;
+	}
+
+	.team-member {
+		margin: 0;
 	}
 }

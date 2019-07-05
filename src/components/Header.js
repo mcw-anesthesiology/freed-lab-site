@@ -17,9 +17,9 @@ export default function Header({ siteTitle }) {
 			<nav>
 				<ul>
 					<li>
-						<HeaderLink to="/goals">
+						<HeaderLink to="/">
 							<GoalsIcon />
-							Goals
+							Home
 						</HeaderLink>
 					</li>
 					<li>

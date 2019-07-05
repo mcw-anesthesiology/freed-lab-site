@@ -1,0 +1,17 @@
+/** @format */
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+form > label {
+	margin-bottom: 1em;
+}
+
+label > input,
+label > textarea {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+}

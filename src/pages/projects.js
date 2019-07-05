@@ -1,22 +1,18 @@
 /** @format */
 
 import React from 'react';
-import { Router, Link } from '@reach/router';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/Layout.js';
 
 import '../styles/projects.css';
 
 export default function Projects({ data }) {
-	const projects = data.allMarkdownRemark.edges.map(e => e.node);
+	const projects = data.projects.edges.map(e => e.node);
 
 	return (
-		<Layout>
-			<Router basepath="projects">
-				<ProjectsList path="/" projects={projects} />
-				<Project path="/:slug" projects={projects} />
-			</Router>
+		<Layout title="Projects">
+			<ProjectsList projects={projects} />
 		</Layout>
 	);
 }
@@ -24,8 +20,6 @@ export default function Projects({ data }) {
 export function ProjectsList({ projects }) {
 	return (
 		<div>
-			<h1>Projects</h1>
-
 			<ul className="projects-list">
 				{projects.map(project => (
 					<ProjectListItem
@@ -66,8 +60,9 @@ export function Project({ slug, projects }) {
 
 export const query = graphql`
 	query {
-		allMarkdownRemark(
+		projects: allMarkdownRemark(
 			filter: { fileAbsolutePath: { regex: "/data/projects/" } }
+			sort: { fields: [frontmatter___order], order: ASC }
 		) {
 			edges {
 				node {
@@ -78,6 +73,7 @@ export const query = graphql`
 					frontmatter {
 						title
 						image
+						order
 					}
 					html
 					excerpt

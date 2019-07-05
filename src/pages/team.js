@@ -11,9 +11,7 @@ export default function Team({ data }) {
 	const teamMembers = data.allTeamYaml.edges.map(e => e.node);
 
 	return (
-		<Layout>
-			<h1>Team</h1>
-
+		<Layout title="Team" hero={data.heroImage.childImageSharp.fluid}>
 			<ul className="team-list">
 				{teamMembers.map(m => (
 					<TeamMember key={m.id} {...m} />
@@ -59,7 +57,7 @@ export const query = graphql`
 					fields {
 						image {
 							childImageSharp {
-								fixed(width: 150, height: 200) {
+								fixed(width: 150, height: 150, quality: 95) {
 									...GatsbyImageSharpFixed
 								}
 							}
@@ -67,6 +65,9 @@ export const query = graphql`
 					}
 				}
 			}
+		}
+		heroImage: file(relativePath: { eq: "hero/team.jpg" }) {
+			...HeroImage
 		}
 	}
 `;

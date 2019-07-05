@@ -2,42 +2,39 @@
   postNominal:
     - MD
     - PhD
-  title: Assistant Professor, Principal Investigator
+  title: Principal Investigator
   bio: |
-    Dr. Freed is an Assistant Professor and Cardiac Anesthesiologist
+    Dr. Freed is an Assistant Professor and Director of Clinical Research
     in the Department of Anesthesiology.
   image: freed-coat.jpg
 - name: Mary Schulz
-  title: Research Technologist III
+  title: Lab Coordinator
   bio: |
-    Mary joined the Freed Lab as a Research Technologist in 2017.
+    Mary joined the Freed Lab as a Research Technologist in 2017 and is now Lab Coordinator.
   image: schulz.jpg
-- name: Kelsey Walters
-  title: Medical Student
-  bio: |
-    Kelsey joined the Freed Lab as a medical student in MCW's Honors in
-    Research Program in 2017.
-  image: walters.jpg
 - name: Boran Katunaric
   postNominal:
     - MD
-  title: Post-Doctoral Fellow
+  title: Post-doctoral Fellow
   bio: |
-    Dr. Katunaric joined the Freed Lab as a Post-Doctoral Fellow in 2018.
+    Dr. Katunaric joined the Freed Lab as a post-doctoral fellow in 2018.
+  image: katunaric.jpg
 - name: Kate Cohen
   postNominal:
     - MD
-  title: Internal Medicine Resident
+  title: Internal Medicine Resident/Post-doctoral Fellow
   bio: |
-    Dr. Cohen is an internal medicine resident and will be joining the lab on July 1st. For two years she is supported by an NIH R38 grant. Following her two years in the lab she will continue on as a Cardiology fellow at Froedtert and MCW.
+    Dr. Cohen joined the lab in 2019 as a post-doctoral fellow on an NIH R38 grant. Following her two-year lab training she will continue as a fellow in Cardiology.
   image: cohen.jpg
-- name: Forrest Stehula
-  title: Medical Student Summer Research Program trainee
+- name: Kelsey Walters
   bio: |
-    Forrest will be in the lab during summer 2019. He is supported by an NIH T35 grant from the NHLBI.
+    Kelsey joined the lab in 2017 as part of the medical summer student research program (NHLBI T35 fellowship) and continued on in the Honors in Research program at MCW. She plans to specialize in Pediatrics.
+  image: walters.jpg
+- name: Forrest Stehula
+  bio: |
+    Forrest joined the lab in 2019 as part of the medical summer student research program (NHLBI T35 fellowship).
   image: stehula.jpg
 - name: Sarah Meeuwsen
-  title: Medical Student Summer Research Program trainee
   bio: |
-    Sarah will be conducting clinical trial studies for the summer of 2019. She is supported by an NIH T35 grant from the NIA.
+    Sarah joined the lab in 2019 as part of the medical summer student research program (NIA T35 fellowship).
   image: meeuwsen.jpg

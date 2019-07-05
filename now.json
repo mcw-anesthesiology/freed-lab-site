@@ -1,12 +1,23 @@
 {
+	"scope": "mcw-anesth",
 	"version": 2,
 	"builds": [
+		{
+			"src": "api/*.js",
+			"use": "@now/node"
+		},
 		{
 			"src": "package.json",
 			"use": "@now/static-build",
 			"config": {
 				"distDir": "public"
 			}
+		}
+	],
+	"routes": [
+		{
+			"src": "/api/(.*)",
+			"dest": "/api/$1.js"
 		}
 	]
 }

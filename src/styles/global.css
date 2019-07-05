@@ -40,16 +40,27 @@ h3 {
 }
 
 .hero {
-	height: 200px;
+	position: relative;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	& .gatsby-image-wrapper {
+		z-index: -1;
+		position: absolute !important;
 		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
 	}
-}
 
-@media (min-height: 700px) {
-	.hero {
-		height: 300px;
+	& img {
+		filter: grayscale(0.1) blur(1px);
+	}
+
+	& h1 {
+		color: white;
 	}
 }
 
