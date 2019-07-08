@@ -1,10 +1,6 @@
 /** @format */
 
 html {
-	--text-color: black;
-	--heading-color: green;
-	--border-color: #ddd;
-
 	--mcw-anesth-dark-green: #006f66;
 	--mcw-anesth-light-green: #58b947;
 	--mcw-blue: #34596b;
@@ -13,6 +9,11 @@ html {
 	--mcw-anesth-light-green-rgb: 88, 185, 71;
 	--mcw-blue-rgb: 52, 89, 107;
 
+	--text-color: black;
+	--heading-color: green;
+	--border-color: #ddd;
+
+	--link-color: var(--mcw-anesth-dark-green);
 	--header-background-color: var(--mcw-anesth-dark-green);
 }
 
@@ -41,7 +42,7 @@ h3 {
 
 .hero {
 	position: relative;
-	height: 100vh;
+	height: 60vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;

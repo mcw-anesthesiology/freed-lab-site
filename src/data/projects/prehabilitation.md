@@ -1,6 +1,6 @@
 ---
 title: Prehabilitation
-image: /images/projects/prehabilitation/image15.png
+image: /images/projects/elderly-hands.jpg
 order: 2
 ---
 

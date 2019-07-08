@@ -35,6 +35,14 @@ exports.onCreateNode = async ({ node, actions }) => {
 			name: 'image',
 			value: `../images/team/${image}`
 		});
+	} else if (node.internal.type === 'MarkdownRemark') {
+		if (node.frontmatter && node.frontmatter.image) {
+			actions.createNodeField({
+				node,
+				name: 'image',
+				value: `../../${node.frontmatter.image}`
+			});
+		}
 	}
 };
 

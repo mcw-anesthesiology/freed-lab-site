@@ -1,7 +1,8 @@
 /** @format */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
 
 import Layout from '../components/Layout.js';
 
@@ -19,42 +20,31 @@ export default function Projects({ data }) {
 
 export function ProjectsList({ projects }) {
 	return (
-		<div>
-			<ul className="projects-list">
-				{projects.map(project => (
+		<section className="projects-list">
+			{projects.map((project, index) => (
+				<Fragment key={project.id}>
 					<ProjectListItem
-						key={project.id}
 						slug={project.fields.slug}
-						image={project.frontmatter.image}
+						image={project.fields.image?.childImageSharp?.fixed}
 						title={project.frontmatter.title}
-						excerpt={project.excerpt}
+						html={project.html}
 					/>
-				))}
-			</ul>
-		</div>
+					{index < projects.length - 1 && <hr />}
+				</Fragment>
+			))}
+		</section>
 	);
 }
 
-export function ProjectListItem({ title, slug, excerpt, image }) {
+export function ProjectListItem({ title, slug, html, image }) {
 	return (
-		<li className="project-list-item">
-			<Link to={slug}>
-				<h3>{title}</h3>
-				<img src={image} alt="" />
-				<div dangerouslySetInnerHTML={{ __html: excerpt }} />
-			</Link>
-		</li>
-	);
-}
-
-export function Project({ slug, projects }) {
-	const project = projects.find(p => p.fields.slug.includes(slug));
-
-	return (
-		<div>
-			<h1>{project.frontmatter.title}</h1>
-			<div dangerouslySetInnerHTML={{ __html: project.html }} />
-		</div>
+		<article className="project-list-item">
+			<h3>
+				<Link to={slug}>{title}</Link>
+			</h3>
+			{image && <Image fixed={image} alt="" />}
+			<div dangerouslySetInnerHTML={{ __html: html }} />
+		</article>
 	);
 }
 
@@ -72,11 +62,17 @@ export const query = graphql`
 					}
 					frontmatter {
 						title
-						image
-						order
+					}
+					fields {
+						image {
+							childImageSharp {
+								fixed(width: 150, height: 150, quality: 95) {
+									...GatsbyImageSharpFixed
+								}
+							}
+						}
 					}
 					html
-					excerpt
 				}
 			}
 		}

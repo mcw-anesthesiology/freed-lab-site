@@ -8,8 +8,6 @@ Sepsis is a leading cause of death in critically ill patients. Bacterial-induced
 
 Hydroxocobalamin, or vitamin B12a, is a known H2S scavenger and has been used clinically to treat intraoperative vasoplegia in liver as well as cardiac disease patients. Our central hypothesis is that sources of H2S are capable of causing vasoplegia in the microcirculation, which is both reversible and preventable with use of cobalamins. This project examines the effect of H2S from both exogenous sources, as well as from H2S-producing bacteria, on the ability of a human microvessel to vasoconstrict. This project is in collaboration with the departments of Pediatrics-Division of Infectious Disease and Medicine-Division of Pulmonary and Critical Care.
 
-![](/images/projects/vasoplegia/image12.png)
-
 Collaborators:
 
 - Rodney Willoughby MD, Pediatric Infectious Disease

@@ -15,7 +15,7 @@
    enable-background="new 0 0 64 64"
    xml:space="preserve"
    id="svg12"
-   sodipodi:docname="noun_contact_631929.svg"
+   sodipodi:docname="contact.svg"
    width="52"
    height="52"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"><defs
@@ -37,12 +37,12 @@
      fit-margin-right="0"
      fit-margin-bottom="4"
      inkscape:zoom="2.95"
-     inkscape:cx="26"
-     inkscape:cy="18"
+     inkscape:cx="6.1694915"
+     inkscape:cy="16.644068"
      inkscape:window-x="2120"
      inkscape:window-y="178"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg12" /><metadata
+     inkscape:current-layer="g6" /><metadata
      id="metadata2"><ns:sfw><ns:slices /><ns:sliceSourceBounds
          height="16384"
          width="16389"
@@ -53,6 +53,7 @@
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><g
      id="g6"
      transform="translate(-6,-6)"><path
-       d="M 56,10 H 8 c -1.104,0 -2,0.896 -2,2 v 32 c 0,1.104 0.896,2 2,2 h 7.469 l 13.539,7.736 C 29.315,53.912 29.658,54 30,54 30.347,54 30.693,53.91 31.004,53.729 31.621,53.372 32,52.713 32,52 v -6 h 24 c 1.104,0 2,-0.896 2,-2 V 12 c 0,-1.104 -0.896,-2 -2,-2 z M 54,42 H 30 c -1.104,0 -2,0.896 -2,2 v 4.554 L 16.992,42.264 C 16.69,42.091 16.348,42 16,42 H 10 V 14 h 44 z"
+       d="M 56,10 H 8 c -1.104,0 -2,0.896 -2,2 v 32 c 0,1.104 0.896,2 2,2 h 7.469 l 13.539,7.736 C 29.315,53.912 29.658,54 30,54 30.347,54 30.693,53.91 31.004,53.729 31.621,53.372 32,52.713 32,52 v -6 h 24 c 1.104,0 2,-0.896 2,-2 V 12 c 0,-1.104 -0.896,-2 -2,-2 z M 28,48.554 c -14.666667,6.297333 -7.333333,3.148667 0,0 z"
        id="path4"
-       inkscape:connector-curvature="0" /></g></svg>
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssccscscsssscc" /></g></svg>

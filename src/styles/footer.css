@@ -1,4 +1,19 @@
 footer {
 	padding: 1em;
 	background-color: #ddd;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+footer > * {
+	flex-grow: 1;
+}
+
+@supports (display: grid) {
+
+	footer {
+		grid-gap: 2em;
+		grid-template-columns: repeat(auto-fit, 1fr);
+	}
 }
