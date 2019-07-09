@@ -4,7 +4,10 @@
 	"builds": [
 		{
 			"src": "api/*.js",
-			"use": "@now/node"
+			"use": "@now/node",
+			"config": {
+				"maxLambdaSize": "25mb"
+			}
 		},
 		{
 			"src": "package.json",
@@ -19,5 +22,11 @@
 			"src": "/api/(.*)",
 			"dest": "/api/$1.js"
 		}
-	]
+	],
+	"env": {
+		"MAIL_FROM": "contact@freed-lab.science",
+		"MAIL_HOST": "@freed-lab-mail-host",
+		"MAIL_USER": "@freed-lab-mail-user",
+		"MAIL_PASS": "@freed-lab-mail-pass"
+	}
 }

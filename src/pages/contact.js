@@ -4,6 +4,7 @@
 import React, { Fragment, useReducer, useCallback } from 'react';
 import { graphql } from 'gatsby';
 import Loading from 'react-loading';
+import { serialize } from 'formee';
 
 import Layout from '../components/Layout.js';
 import ContactAddress from '../components/ContactAddress.js';
@@ -48,7 +49,7 @@ export default function ContactPage({ data }) {
 		dispatch('submit');
 
 		try {
-			await submitContact();
+			await submitContact(event);
 			dispatch('success');
 		} catch (err) {
 			console.error(err);
@@ -130,7 +131,7 @@ export default function ContactPage({ data }) {
 	);
 }
 
-async function submitContact() {
+async function submitContact(event) {
 	if (process.env.NODE_ENV === 'development') {
 		return new Promise(resolve => {
 			setTimeout(() => {
@@ -141,7 +142,10 @@ async function submitContact() {
 
 	const response = await fetch('/api/contact', {
 		method: 'POST',
-		body: new FormData(event.target)
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(serialize(event.target))
 	});
 
 	if (!response.ok) {
