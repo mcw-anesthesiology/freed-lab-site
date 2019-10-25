@@ -24,9 +24,13 @@ export default function Footer() {
 
 	return (
 		<footer>
+			<div></div>
 			<div>
-				<p>Footer</p>
-				<p>© Medical College of Wisconsin</p>
+				<img
+					className="mcw-logo"
+					src="/images/icons/mcw-logo-big-white.png"
+					alt="MCW - knowledge changing life"
+				/>
 			</div>
 
 			<div>

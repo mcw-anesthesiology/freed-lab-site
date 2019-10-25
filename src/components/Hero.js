@@ -7,7 +7,7 @@ export default function Hero({ fluid, children }) {
 	return (
 		<div className="hero">
 			<Img fluid={fluid} />
-			{children}
+			<div className="hero-content">{children}</div>
 		</div>
 	);
 }

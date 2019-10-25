@@ -2,48 +2,52 @@
 
 header {
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	background-color: var(--header-background-color);
-	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 300;
+	padding: 4em 2em;
+
+	& h1 {
+		font-size: 5em;
+		margin: 0;
+		color: white;
+	}
 
 	& a {
 		text-decoration: none;
-		opacity: 0.8;
 
 		&,
 		&:visited {
-			color: #fafafa;
+			color: var(--link-color);
 		}
-
-		&:hover,
-		&:focus,
-		&.active{
-			opacity: 1;
-		}
-
-		&.active {
-			cursor: normal;
-			pointer-events: none;
-		}
-	}
-
-	& > a {
-		font-size: 1.5em;
-		margin: 0.5em;
 	}
 
 	& nav ul {
+		font-family: var(--heading-font-family);
+		font-weight: var(--heading-font-weight);
+		text-transform: var(--heading-text-transform);
+		font-size: 1.5em;
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0;
 		padding: 0;
 
 		& li {
-			margin: 0.5em;
 			list-style: none;
+
+			& ~ li {
+				&:before {
+					font-size: 0.9em;
+					color: var(--link-color);
+					opacity: 0.8;
+					content: '|';
+					padding: 0 0.75em;
+					vertical-align: top;
+				}
+			}
 
 			& a {
 				position: relative;
@@ -55,7 +59,7 @@ header {
 					left: 51%;
 					right: 51%;
 					bottom: -0.5em;
-					background: #fafafa;
+					background: var(--link-color);
 					height: 1px;
 					transition-property: left, right;
 					transition-duration: 0.1s;
@@ -64,8 +68,7 @@ header {
 
 				&:hover,
 				&:focus,
-				&:active,
-				&.active {
+				&:active {
 					&:before {
 						left: 0;
 						right: 0;

@@ -1,4 +1,12 @@
-main.home {
+main {
+
+	background: linear-gradient(
+		to right,
+		transparent var(--background-left),
+		black calc(var(--background-left)),
+		black calc(var(--background-left) + var(--background-stripe)),
+		transparent calc(var(--background-left) + var(--background-stripe))
+	);
 
 	& nav ul {
 		display: flex;
@@ -30,4 +38,27 @@ main.home {
 			}
 		}
 	}
+
+	& > section {
+		--section-padding-vertical: 5em;
+		--section-padding-horizontal: 3em;
+		--grid-template-columns: calc(var(--background-left) - var(--section-padding-horizontal)) var(--background-stripe) calc(var(--background-right) - var(--section-padding-horizontal));
+
+		margin: 2em 0;
+		padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+	}
+}
+
+@supports (display: grid) {
+	main > section {
+		grid-template-areas: var(--grid-template-areas);
+		grid-template-columns: var(--grid-template-columns);
+	}
+}
+
+header .mcw-logo {
+	position: absolute;
+	top: 1.5em;
+	left: 1.5em;
+	width: 150px;
 }

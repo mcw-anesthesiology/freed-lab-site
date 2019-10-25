@@ -9,16 +9,34 @@ html {
 	--mcw-anesth-light-green-rgb: 88, 185, 71;
 	--mcw-blue-rgb: 52, 89, 107;
 
-	--text-color: black;
-	--heading-color: green;
+	--text-color: white;
 	--border-color: #ddd;
+	--primary-color: orange;
 
-	--link-color: var(--mcw-anesth-dark-green);
-	--header-background-color: var(--mcw-anesth-dark-green);
+	--body-font-family: serif;
+	--heading-font-family: 'Source Sans Pro', sans-serif;
+	--heading-font-weight: 300;
+	--heading-text-transform: uppercase;
+
+	--heading-color: var(--primary-color);
+	--link-color: var(--primary-color);
+	--header-background-color: #222;
+
+
+
+	--background-left: 33vw;
+	--background-stripe: 12vw;
+	--background-right: 55vw;
+
+	--header-z-index: 5;
+
+	--grid-template-areas: 'left stripe right';
+	--grid-template-columns: var(--background-left) var(--background-stripe) var(--background-right);
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	color: var(--text-color);
+	background-color: #333;
 }
 
 #layout {
@@ -29,26 +47,32 @@ body {
 
 main {
 	box-sizing: border-box;
-	padding: 1em;
+	font-family: var(--body-font-family);
 	flex-grow: 1;
 }
 
 h1,
 h2,
 h3 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 300;
+	font-family: var(--heading-font-family);
+	color: var(--heading-color);
+	font-weight: var(--heading-font-weight);
+	text-transform: var(--heading-text-transform);
+}
+
+h2 {
+	font-size: 2em;
 }
 
 .hero {
 	position: relative;
 	height: 60vh;
+	padding: 10%;
+	box-sizing: border-box;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 
 	& .gatsby-image-wrapper {
-		z-index: -1;
 		position: absolute !important;
 		height: 100%;
 		width: 100%;
@@ -56,12 +80,8 @@ h3 {
 		left: 0;
 	}
 
-	& img {
-		filter: grayscale(0.1) blur(1px);
-	}
-
-	& h1 {
-		color: white;
+	& .hero-content {
+		z-index: var(--header-z-index);
 	}
 }
 
@@ -72,4 +92,8 @@ nav svg {
 	vertical-align: middle;
 	fill: currentColor;
 	stroke: currentColor;
+}
+
+p {
+	line-height: 1.5;
 }

@@ -11,7 +11,14 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 import Hero from './Hero.js';
 
-export default function Layout({ className, hero, title, children }) {
+export default function Layout({
+	className,
+	title,
+	children,
+	hero,
+	heroImage,
+	headerContent
+}) {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -32,14 +39,22 @@ export default function Layout({ className, hero, title, children }) {
 			}
 		}
 	`);
-	if (hero === undefined) {
-		hero = data.heroImage.childImageSharp.fluid;
+
+	if (heroImage === undefined) {
+		heroImage = data.heroImage.childImageSharp.fluid;
 	}
 
 	return (
-		<div id="layout">
-			<Header siteTitle={data.site.siteMetadata.title} />
-			{hero && <Hero fluid={hero}>{title && <h1>{title}</h1>}</Hero>}
+		<div id="layout" className={className}>
+			{hero || (
+				<Hero fluid={heroImage}>
+					<Header
+						title={title || data.site.siteMetadata.title}
+					>
+						{headerContent}
+					</Header>
+				</Hero>
+			)}
 			<main className={className}>{children}</main>
 			<Footer />
 		</div>

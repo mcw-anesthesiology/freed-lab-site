@@ -3,40 +3,32 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import ContactIcon from '../images/icons/contact.svg';
-import GoalsIcon from '../images/icons/goals.svg';
-import ProjectsIcon from '../images/icons/projects.svg';
-import TeamIcon from '../images/icons/team.svg';
-
 import '../styles/header.css';
 
-export default function Header({ siteTitle }) {
+export default function Header({ children, title }) {
 	return (
 		<header>
-			<HeaderLink to="/">{siteTitle}</HeaderLink>
+			{children}
+			{title && <h1>{title}</h1>}
 			<nav>
 				<ul>
 					<li>
 						<HeaderLink to="/">
-							<GoalsIcon />
 							Home
 						</HeaderLink>
 					</li>
 					<li>
 						<HeaderLink to="/projects">
-							<ProjectsIcon />
 							Projects
 						</HeaderLink>
 					</li>
 					<li>
 						<HeaderLink to="/team">
-							<TeamIcon />
 							Team
 						</HeaderLink>
 					</li>
 					<li>
 						<HeaderLink to="/contact">
-							<ContactIcon />
 							Contact
 						</HeaderLink>
 					</li>

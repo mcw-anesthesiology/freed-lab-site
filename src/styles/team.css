@@ -1,3 +1,31 @@
+section.team {
+	padding-left: 0;
+	padding-right: 0;
+
+	& .hero {
+		height: 350px;
+		padding: 2em;
+		align-items: flex-start;
+		padding-left: var(--background-left);
+
+		& .gatsby-image-wrapper  {
+			z-index: 1;
+		}
+	}
+}
+
+@supports (display: gridf) {
+	section.team .hero {
+		display: grid;
+		grid-template-areas: 'left title title';
+		grid-template-columns: var(--grid-template-columns);
+
+		& .hero-content {
+			grid-area: title;
+		}
+	}
+}
+
 .team-list {
 	display: flex;
 	flex-direction: row;

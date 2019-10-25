@@ -1,19 +1,19 @@
 footer {
 	padding: 1em;
-	background-color: #ddd;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-}
 
-footer > * {
-	flex-grow: 1;
+	& .mcw-logo {
+		max-width: 100%;
+	}
 }
 
 @supports (display: grid) {
 
 	footer {
+		display: grid;
 		grid-gap: 2em;
-		grid-template-columns: repeat(auto-fit, 1fr);
+		grid-template-columns: var(--grid-template-columns);
 	}
 }

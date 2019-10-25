@@ -13,7 +13,7 @@ export default function Project({ data }) {
 	return (
 		<Layout
 			title={project.frontmatter.title}
-			hero={project.fields?.image?.childImageSharp?.fluid}
+			heroImage={project.fields?.image?.childImageSharp?.fluid}
 		>
 			<div dangerouslySetInnerHTML={{ __html: project.html }} />
 		</Layout>

@@ -2,11 +2,10 @@
 /* global process */
 
 import React, { Fragment, useReducer, useCallback } from 'react';
-import { graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Loading from 'react-loading';
 import { serialize } from 'formee';
 
-import Layout from '../components/Layout.js';
 import ContactAddress from '../components/ContactAddress.js';
 
 import '../styles/contact.css';
@@ -37,7 +36,22 @@ function submitReducer(state, action) {
 	}
 }
 
-export default function ContactPage({ data }) {
+export default function Contact() {
+	const data = useStaticQuery(
+		graphql`
+			query ContactQuery {
+				site {
+					siteMetadata {
+						contactUsers {
+							name
+							email
+							phone
+						}
+					}
+				}
+			}
+		`
+	);
 	const [{ submitting, successful: submitted }, dispatch] = useReducer(
 		submitReducer,
 		{ submitting: false, successful: null }
@@ -62,9 +76,7 @@ export default function ContactPage({ data }) {
 	});
 
 	return (
-		<Layout title="Contact" className="contact-page">
-			<p className="lead">If you have questions please contact us!</p>
-
+		<section className="contact">
 			<form
 				className={submitted === false ? 'unsuccessful' : null}
 				disabled={submitting}
@@ -113,21 +125,19 @@ export default function ContactPage({ data }) {
 							></textarea>
 						</label>
 
-						<div className="growing-container">
-							{submitting && <Loading color="#ccc" />}
+						<div className="form-controls">
+							{submitting ? (
+								<Loading color="#ccc" />
+							) : (
+								<button type="submit" disabled={submitting}>
+									Submit
+								</button>
+							)}
 						</div>
-
-						<button type="submit" disabled={submitting}>
-							Submit
-						</button>
 					</Fragment>
 				)}
 			</form>
-
-			{data.site.siteMetadata.contactUsers.map(contactUser => (
-				<ContactAddress key={contactUser.email} user={contactUser} />
-			))}
-		</Layout>
+		</section>
 	);
 }
 
@@ -152,17 +162,3 @@ async function submitContact(event) {
 		throw new Error(response.status);
 	}
 }
-
-export const query = graphql`
-	query ContactQuery {
-		site {
-			siteMetadata {
-				contactUsers {
-					name
-					email
-					phone
-				}
-			}
-		}
-	}
-`;
