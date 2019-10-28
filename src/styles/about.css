@@ -1,6 +1,5 @@
 #about {
 	background-color: var(--floating-block-background-color);
-	padding: 0;
 
 	& .hero {
 		height: 350px;
@@ -18,6 +17,7 @@
 	@supports (display: grid) {
 		#about .hero .hero-content {
 			display: grid;
+			padding: 0;
 			grid-template-areas: var(--grid-template-areas);
 			grid-template-columns: var(--grid-template-columns);
 

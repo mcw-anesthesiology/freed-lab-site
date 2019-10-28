@@ -1,17 +1,46 @@
 /** @format */
 
-#contact > div {
-	padding: 1em;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+#contact {
+	margin-left: auto;
+	margin-right: auto;
+
+	@media (min-width: 600px) {
+		max-width: 70%;
+	}
+
+	& .hero {
+		height: 40vh;
+		padding: 0;
+
+		& .gatsby-image-wrapper {
+			opacity: 0.5;
+		}
+
+		& .hero-content {
+			flex-grow: 1;
+			width: 100%;
+			height: 100%;
+		}
+
+		& header {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: center;
+			background-color: rgba(var(--block-background-rgba), 0.65);
+			height: 100%;
+			width: 100%;
+
+			& h2 {
+				margin: 0 0 2em;
+			}
+		}
+	}
 }
 
 form {
 	background-color: var(--floating-block-background-color);
 	padding: 2em;
-	margin: 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;

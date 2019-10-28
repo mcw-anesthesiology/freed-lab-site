@@ -9,8 +9,15 @@ body {
 }
 
 main > section {
-	margin: 4em 0;
-	padding: 5em 3em;
+	margin: 3em 0;
+	padding: 3em 1em;
+}
+
+@media (min-width: 600px) {
+	main > section {
+		margin: 4em 0;
+		padding: 5em 3em;
+	}
 }
 
 @media (min-width: 768px) {

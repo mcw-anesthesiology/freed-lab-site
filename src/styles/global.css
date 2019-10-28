@@ -23,14 +23,14 @@ html {
 	--background-color: #333;
 	--stripe-color: black;
 
-	--header-background-alpha: 0.95;
-	--header-background-color: rgba(24, 24, 24, var(--header-background-alpha));
+	--block-background-rgba: 24, 24, 24;
 
-	--floating-block-alpha: 0.5;
+	--header-background-alpha: 0.95;
+	--header-background-color: rgba(var(--block-background-rgba), var(--header-background-alpha));
+
+	--floating-block-alpha: 0.6;
 	--floating-block-background-color: rgba(
-		24,
-		24,
-		24,
+		var(--block-background-rgba),
 		var(--floating-block-alpha)
 	);
 

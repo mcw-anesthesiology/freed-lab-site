@@ -2,8 +2,11 @@
 /* global process */
 
 import React, { Fragment, useReducer, useCallback } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import Loading from 'react-loading';
 import { serialize } from 'formee';
+
+import Hero from './Hero.js';
 
 import '../styles/contact.css';
 
@@ -34,6 +37,14 @@ function submitReducer(state, action) {
 }
 
 export default function Contact() {
+	const data = useStaticQuery(graphql`
+		query ContactQuery {
+			heroImage: file(relativePath: { eq: "hero/DSC_7920 BW.jpg" }) {
+				...HeroImage
+			}
+		}
+	`);
+
 	const [{ submitting, successful: submitted }, dispatch] = useReducer(
 		submitReducer,
 		{ submitting: false, successful: null }
@@ -59,6 +70,11 @@ export default function Contact() {
 
 	return (
 		<section id="contact">
+			<Hero fluid={data.heroImage.childImageSharp.fluid}>
+				<header>
+					<h2>Contact</h2>
+				</header>
+			</Hero>
 			<form
 				className={submitted === false ? 'unsuccessful' : null}
 				disabled={submitting}
