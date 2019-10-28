@@ -10,7 +10,19 @@ header#site-header {
 	background-color: var(--header-background-color);
 	font-weight: 300;
 	padding: 4em 2em;
-	min-width: 50%;
+
+	@media (min-width: 768px) {
+		padding-right: 6em;
+	}
+
+	& .mcw-logo {
+		position: absolute;
+		top: 1.5em;
+		left: 1.5em;
+		max-height: 6em;
+		width: auto;
+		max-width: 100%;
+	}
 
 	& h1 {
 		font-size: 3em;

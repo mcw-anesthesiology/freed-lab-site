@@ -85,6 +85,7 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: flex-start;
 
 	& .gatsby-image-wrapper {
 		position: absolute !important;
