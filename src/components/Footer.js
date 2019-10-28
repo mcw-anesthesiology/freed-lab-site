@@ -3,8 +3,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import ContactAddress from './ContactAddress.js';
-
 import '../styles/footer.css';
 
 export default function Footer() {
