@@ -6,6 +6,7 @@ footer {
 
 	& .mcw-logo {
 		max-width: 100%;
+		overflow: visible !important;
 	}
 }
 

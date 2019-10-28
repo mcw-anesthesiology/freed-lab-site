@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 import Layout from '../components/Layout.js';
 import SEO from '../components/SEO.js';
@@ -24,9 +25,9 @@ export default function IndexPage({ data }) {
 				}
 			}}
 			headerContent={
-				<img
+				<Image
 					className="mcw-logo"
-					src="/images/icons/mcw-logo-big-white.png"
+					fixed={data.mcwLogo.childImageSharp.fixed}
 					alt="MCW - knowledge changing life"
 				/>
 			}
@@ -46,6 +47,13 @@ export const query = graphql`
 		site {
 			siteMetadata {
 				title
+			}
+		}
+		mcwLogo: file(relativePath: { eq: "icons/mcw-logo-big-white.png" }) {
+			childImageSharp {
+				fixed(height: 100) {
+					...GatsbyImageSharpFixed
+				}
 			}
 		}
 		heroImage: file(relativePath: { eq: "hero/heart-cropped.jpg" }) {
