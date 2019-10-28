@@ -36,8 +36,12 @@ export default function Team() {
 						}
 					}
 				}
-				heroImage: file(relativePath: { eq: "hero/team.jpg" }) {
-					...HeroImage
+				heroImage: file(relativePath: { eq: "hero/DSC_2328.jpg" }) {
+					childImageSharp {
+						fluid(maxWidth: 1920, quality: 90, cropFocus: NORTH) {
+							...GatsbyImageSharpFluid
+						}
+					}
 				}
 			}
 		`
@@ -46,7 +50,7 @@ export default function Team() {
 
 	return (
 		<section id="team">
-			<Hero fluid={data.heroImage.childImageSharp.fluid}>
+			<Hero fluid={data.heroImage.childImageSharp.fluid} imgStyle={{ objectPosition: 'center top' }}>
 				<h2>People</h2>
 			</Hero>
 			<ul className="team-list">

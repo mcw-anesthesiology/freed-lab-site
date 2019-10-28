@@ -1,6 +1,8 @@
 ---
 title: In vivo Microvascular Assessment
-image: /images/projects/cytocam/image14.jpeg
+image: /images/hero/DSC_7917.jpg
+imageStyles:
+  objectPosition: top
 order: 3
 ---
 

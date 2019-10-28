@@ -1,12 +1,25 @@
 #about {
 	background-color: var(--floating-block-background-color);
+	padding: 0;
+
+	& .hero {
+		height: 350px;
+		padding: 2em 0;
+		align-items: flex-start;
+
+		& .gatsby-image-wrapper  {
+			z-index: 1;
+			opacity: 0.25;
+		}
+	}
 }
 
 @media (min-width: 768px) {
 	@supports (display: grid) {
-		#about {
+		#about .hero .hero-content {
 			display: grid;
 			grid-template-areas: var(--grid-template-areas);
+			grid-template-columns: var(--grid-template-columns);
 
 			& > h2 {
 				grid-area: center;

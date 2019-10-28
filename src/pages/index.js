@@ -18,6 +18,11 @@ export default function IndexPage({ data }) {
 		<Layout
 			className="home"
 			heroImage={data.heroImage.childImageSharp.fluid}
+			heroProps={{
+				imgStyle: {
+					objectPosition: 'left top'
+				}
+			}}
 			headerContent={
 				<img
 					className="mcw-logo"
@@ -43,9 +48,9 @@ export const query = graphql`
 				title
 			}
 		}
-		heroImage: file(relativePath: { eq: "hero/freed-and-schulz.jpg" }) {
+		heroImage: file(relativePath: { eq: "hero/heart-cropped.jpg" }) {
 			childImageSharp {
-				fluid(maxWidth: 1920) {
+				fluid(maxWidth: 1920, quality: 90, cropFocus: NORTHWEST) {
 					...GatsbyImageSharpFluid
 				}
 			}

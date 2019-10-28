@@ -3,6 +3,8 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
+import Hero from './Hero.js';
+
 import '../styles/projects.css';
 
 export default function Projects() {
@@ -17,10 +19,21 @@ export default function Projects() {
 						id
 						fields {
 							slug
+							image {
+								childImageSharp {
+									fluid(cropFocus: CENTER, grayscale: true) {
+										...GatsbyImageSharpFluid
+									}
+								}
+							}
 						}
 						frontmatter {
 							title
 							image
+							imageStyles {
+								objectPosition
+								objectFit
+							}
 						}
 					}
 				}
@@ -47,25 +60,38 @@ export function ProjectsList({ projects }) {
 			{projects.map(project => (
 				<ProjectListItem
 					key={project.id}
-					slug={project.fields.slug}
-					image={project.frontmatter.image}
-					title={project.frontmatter.title}
 					html={project.html}
+					{...project.frontmatter}
+					{...project.fields}
 				/>
 			))}
 		</ul>
 	);
 }
 
-export function ProjectListItem({ title, slug, image }) {
+const IMAGE_STYLE_DEFAULTS = {
+	objectPosition: 'center',
+	objectFit: 'cover'
+};
+
+export function ProjectListItem({ title, slug, image, imageStyles }) {
+	if (!imageStyles) {
+		imageStyles = {};
+	}
+
+	for (const [prop, val] of Object.entries(IMAGE_STYLE_DEFAULTS)) {
+		if (!imageStyles[prop]) {
+			imageStyles[prop] = val;
+		}
+	}
+
 	return (
-		<li
-			className="project-list-item"
-			style={{ backgroundImage: `url(${image})` }}
-		>
-			<Link to={slug}>
-				<span>{title}</span>
-			</Link>
+		<li className="project-list-item">
+			<Hero fluid={image.childImageSharp.fluid} imgStyle={imageStyles}>
+				<Link to={slug}>
+					<span>{title}</span>
+				</Link>
+			</Hero>
 		</li>
 	);
 }

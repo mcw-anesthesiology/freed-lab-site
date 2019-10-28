@@ -4,7 +4,7 @@
 
 .projects-list {
 	--list-item-size: 125px;
-	--list-item-background: 48, 48, 48;
+	--list-item-background: 24, 24, 24;
 
 	display: flex;
 	flex-direction: column;
@@ -14,7 +14,19 @@
 .project-list-item {
 	list-style: none;
 	height: var(--list-item-size);
+	background-size: cover;
+	background-position: center;
 	padding: 0;
+
+	& .hero {
+		height: 100%;
+		padding: 0;
+		align-items: stretch;
+
+		& .hero-content {
+			flex-grow: 1;
+		}
+	}
 
 	& a {
 		font-family: var(--heading-font-family);
@@ -28,7 +40,7 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		padding: 0.5em;
-		background-color: rgba(var(--list-item-background), 0.7);
+		background-color: rgba(var(--list-item-background), 0.85);
 		transition-property: background-color;
 		transition-duration: 0.05s;
 		transition-timing-function: ease-in;

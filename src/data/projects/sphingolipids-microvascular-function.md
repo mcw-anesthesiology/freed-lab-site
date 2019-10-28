@@ -1,6 +1,8 @@
 ---
 title: Sphingolipids & Microvascular Function
-image: /images/projects/sphingolipids-microvascular-function/image11.png
+image: /images/hero/DSC_1238 BW.jpg
+imageStyles:
+  objectPosition: center 60%
 order: 1
 ---
 

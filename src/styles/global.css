@@ -79,8 +79,6 @@ h2 {
 
 .hero {
 	position: relative;
-	min-height: 60vh;
-	padding: 8em 2em 2em;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -102,6 +100,11 @@ h2 {
 	@media (min-width: 600px) {
 		padding: 12em 6em 8em;
 	}
+}
+
+#layout > hero {
+	min-height: 60vh;
+	padding: 8em 2em 2em;
 }
 
 nav svg {

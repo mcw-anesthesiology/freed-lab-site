@@ -1,6 +1,8 @@
 ---
 title: Vasoplegia
-image: /images/projects/vasoplegia/image12.png
+image: /images/hero/DSC_1198 BW.jpg
+imageStyles:
+  objectPosition: 50% 80%
 order: 4
 ---
 

@@ -17,6 +17,7 @@ export default function Layout({
 	children,
 	hero,
 	heroImage,
+	heroProps = {},
 	headerContent
 }) {
 	const data = useStaticQuery(graphql`
@@ -33,7 +34,7 @@ export default function Layout({
 
 		fragment HeroImage on File {
 			childImageSharp {
-				fluid(maxWidth: 1920) {
+				fluid(maxWidth: 1920, quality: 90) {
 					...GatsbyImageSharpFluid
 				}
 			}
@@ -47,7 +48,7 @@ export default function Layout({
 	return (
 		<div id="layout" className={className}>
 			{hero || (
-				<Hero fluid={heroImage}>
+				<Hero fluid={heroImage} {...heroProps}>
 					<Header
 						title={title || data.site.siteMetadata.title}
 					>
