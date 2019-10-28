@@ -12,11 +12,8 @@ export default function Footer() {
 		query FooterContactQuery {
 			site {
 				siteMetadata {
-					contactUsers {
-						name
-						email
-						phone
-					}
+					departmentWebsite
+					mailingAddress
 				}
 			}
 		}
@@ -34,13 +31,11 @@ export default function Footer() {
 				/>
 			</div>
 
-			<div>
-				{site.siteMetadata.contactUsers.map(contactUser => (
-					<ContactAddress
-						key={contactUser.email}
-						user={contactUser}
-					/>
-				))}
+			<div className="contact">
+				<a href={site.siteMetadata.departmentWebsite}>
+					{site.siteMetadata.departmentWebsite}
+				</a>
+				<address>{site.siteMetadata.mailingAddress}</address>
 			</div>
 		</footer>
 	);

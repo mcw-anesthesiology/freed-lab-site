@@ -42,7 +42,9 @@ module.exports = {
 				author: 'Creative Stall, PK',
 				link: 'https://thenounproject.com/icon/1091926/'
 			}
-		]
+		],
+		departmentWebsite: 'www.mcw.edu/anesthesiology',
+		mailingAddress: '8701 W. Watertown Plank Road, Milwaukee, WI'
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
