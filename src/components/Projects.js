@@ -32,7 +32,6 @@ export default function Projects() {
 							image
 							imageStyles {
 								objectPosition
-								objectFit
 							}
 						}
 					}
