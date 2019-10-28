@@ -26,6 +26,7 @@ footer {
 
 		& .contact {
 			grid-area: right;
+			word-break: break-word;
 
 			& a {
 				text-decoration: none;

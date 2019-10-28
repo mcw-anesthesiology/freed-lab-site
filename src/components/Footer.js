@@ -32,9 +32,9 @@ export default function Footer() {
 			</div>
 
 			<div className="contact">
-				<a href={site.siteMetadata.departmentWebsite}>
-					{site.siteMetadata.departmentWebsite}
-				</a>
+				<a href={site.siteMetadata.departmentWebsite}
+					dangerouslySetInnerHTML={{ __html: site.siteMetadata.departmentWebsite.replace('/', '/<wbr>') }}
+				></a>
 				<address>{site.siteMetadata.mailingAddress}</address>
 			</div>
 		</footer>
