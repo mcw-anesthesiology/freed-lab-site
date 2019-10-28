@@ -13,24 +13,16 @@ export default function Header({ children, title }) {
 			<nav>
 				<ul>
 					<li>
-						<HeaderLink to="/">
-							Home
-						</HeaderLink>
+						<HeaderLink to="#">Home</HeaderLink>
 					</li>
 					<li>
-						<HeaderLink to="/projects">
-							Projects
-						</HeaderLink>
+						<HeaderLink to="#projects">Projects</HeaderLink>
 					</li>
 					<li>
-						<HeaderLink to="/team">
-							Team
-						</HeaderLink>
+						<HeaderLink to="#team">Team</HeaderLink>
 					</li>
 					<li>
-						<HeaderLink to="/contact">
-							Contact
-						</HeaderLink>
+						<HeaderLink to="#contact">Contact</HeaderLink>
 					</li>
 				</ul>
 			</nav>

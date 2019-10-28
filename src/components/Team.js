@@ -45,7 +45,7 @@ export default function Team() {
 	const teamMembers = data.allTeamYaml.edges.map(e => e.node);
 
 	return (
-		<section className="team">
+		<section id="team">
 			<Hero fluid={data.heroImage.childImageSharp.fluid}>
 				<h2>People</h2>
 			</Hero>

@@ -30,13 +30,18 @@ module.exports = async (req, res) => {
 };
 
 async function sendNotifications(body) {
-	return Promise.all(gatsbyConfig.siteMetadata.contactUsers.map(user =>
-		mailer.sendMail({
-			from: MAIL_FROM,
-			to: user.email,
-			replyTo: body.email,
-			subject: body.subject || 'Contact form submission',
-			text: body.body
-		})
-	));
+	return Promise.all(
+		gatsbyConfig.siteMetadata.contactUsers.map(user =>
+			mailer.sendMail({
+				from: MAIL_FROM,
+				to: user.email,
+				replyTo: body.email,
+				subject: body.subject || 'Contact form submission',
+				text: `New submission from ${body.name}
+
+				${body.body}
+			`
+			})
+		)
+	);
 }

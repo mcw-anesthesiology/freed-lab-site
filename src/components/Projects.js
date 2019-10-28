@@ -31,7 +31,7 @@ export default function Projects() {
 	const projects = data.projects.edges.map(e => e.node);
 
 	return (
-		<section className="projects">
+		<section id="projects">
 			<section>
 				<h2>Projects</h2>
 				<p>Words</p>
@@ -59,11 +59,12 @@ export function ProjectsList({ projects }) {
 
 export function ProjectListItem({ title, slug, image }) {
 	return (
-		<li className="project-list-item" style={{ backgroundImage: `url(${image})` }}>
+		<li
+			className="project-list-item"
+			style={{ backgroundImage: `url(${image})` }}
+		>
 			<Link to={slug}>
-				<span>
-					{title}
-				</span>
+				<span>{title}</span>
 			</Link>
 		</li>
 	);

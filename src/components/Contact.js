@@ -2,11 +2,8 @@
 /* global process */
 
 import React, { Fragment, useReducer, useCallback } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import Loading from 'react-loading';
 import { serialize } from 'formee';
-
-import ContactAddress from '../components/ContactAddress.js';
 
 import '../styles/contact.css';
 
@@ -37,21 +34,6 @@ function submitReducer(state, action) {
 }
 
 export default function Contact() {
-	const data = useStaticQuery(
-		graphql`
-			query ContactQuery {
-				site {
-					siteMetadata {
-						contactUsers {
-							name
-							email
-							phone
-						}
-					}
-				}
-			}
-		`
-	);
 	const [{ submitting, successful: submitted }, dispatch] = useReducer(
 		submitReducer,
 		{ submitting: false, successful: null }
@@ -76,7 +58,7 @@ export default function Contact() {
 	});
 
 	return (
-		<section className="contact">
+		<section id="contact">
 			<form
 				className={submitted === false ? 'unsuccessful' : null}
 				disabled={submitting}
@@ -96,6 +78,16 @@ export default function Contact() {
 				) : (
 					<Fragment>
 						<label>
+							Name
+							<input
+								type="text"
+								name="name"
+								readOnly={submitting}
+								required
+							/>
+						</label>
+
+						<label>
 							Your email
 							<input
 								type="email"
@@ -106,17 +98,7 @@ export default function Contact() {
 						</label>
 
 						<label>
-							Subject
-							<input
-								type="text"
-								name="subject"
-								readOnly={submitting}
-								required
-							/>
-						</label>
-
-						<label>
-							Body
+							How can we help you?
 							<textarea
 								name="body"
 								rows="5"
@@ -129,7 +111,11 @@ export default function Contact() {
 							{submitting ? (
 								<Loading color="#ccc" />
 							) : (
-								<button type="submit" disabled={submitting}>
+								<button
+									type="submit"
+									className="button"
+									disabled={submitting}
+								>
 									Submit
 								</button>
 							)}

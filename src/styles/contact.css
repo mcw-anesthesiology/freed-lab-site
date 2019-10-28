@@ -1,6 +1,6 @@
 /** @format */
 
-section.contact > div {
+#contact > div {
 	padding: 1em;
 	display: flex;
 	flex-direction: column;
@@ -9,13 +9,12 @@ section.contact > div {
 }
 
 form {
-	border: 1px solid #ddd;
+	background-color: var(--floating-block-background-color);
 	padding: 2em;
 	margin: 2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	align-items: center;
 }
 
 .form-controls {
@@ -23,12 +22,17 @@ form {
 }
 
 form > label {
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
+	text-transform: var(--heading-text-transform);
+	color: var(--heading-color);
 	margin-bottom: 1em;
 	width: 100%;
 }
 
 label input,
 label textarea {
+	margin-top: 0.25em;
 	display: block;
 	box-sizing: border-box;
 	width: 100%;

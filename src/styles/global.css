@@ -24,6 +24,14 @@ html {
 	--stripe-color: black;
 	--header-background-color: #222;
 
+	--floating-block-alpha: 0.5;
+	--floating-block-background-color: rgba(
+		24,
+		24,
+		24,
+		var(--floating-block-alpha)
+	);
+
 	--background-stripe: 15vw;
 
 	--grid-left: 1fr;
@@ -97,4 +105,16 @@ nav svg {
 
 p {
 	line-height: 1.5;
+}
+
+.button {
+	color: var(--text-color);
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
+	text-transform: var(--heading-text-transform);
+	background-color: var(--primary-color);
+	font-size: 1.5em;
+	padding: 1em 2em 0.5em 0.5em;
+	border: none;
+	border-radius: 2px;
 }

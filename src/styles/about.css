@@ -1,5 +1,5 @@
-section.about {
-	background-color: rgba(24, 24, 24, 0.5);
+#about {
+	background-color: var(--floating-block-background-color);
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -22,7 +22,7 @@ section.about {
 }
 
 @supports (display: grid) {
-	section.about {
+	#about {
 		display: grid;
 		grid-template-areas: var(--grid-template-areas);
 

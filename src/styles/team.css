@@ -1,4 +1,4 @@
-section.team {
+#team {
 	padding-left: 0;
 	padding-right: 0;
 
@@ -14,7 +14,7 @@ section.team {
 }
 
 @supports (display: grid) {
-	section.team .hero {
+	#team .hero {
 		display: grid;
 		grid-template-areas: var(--grid-template-areas);
 		grid-template-columns: var(--grid-template-columns);
