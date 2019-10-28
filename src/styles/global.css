@@ -22,7 +22,9 @@ html {
 	--link-color: var(--primary-color);
 	--background-color: #333;
 	--stripe-color: black;
-	--header-background-color: #222;
+
+	--header-background-alpha: 0.95;
+	--header-background-color: rgba(24, 24, 24, var(--header-background-alpha));
 
 	--floating-block-alpha: 0.5;
 	--floating-block-background-color: rgba(
@@ -32,7 +34,7 @@ html {
 		var(--floating-block-alpha)
 	);
 
-	--background-stripe: 15vw;
+	--background-stripe: 125px;
 
 	--grid-left: 1fr;
 	--grid-center: var(--background-stripe);
@@ -43,6 +45,8 @@ html {
 	--grid-template-areas: 'left center right right';
 	--grid-template-columns: var(--grid-left) var(--grid-center)
 		var(--grid-center) var(--grid-right);
+
+	--desktop-width: 768px;
 }
 
 body {
@@ -76,10 +80,11 @@ h2 {
 .hero {
 	position: relative;
 	min-height: 60vh;
-	padding: 12em 6em 8em;
+	padding: 8em 2em 2em;
 	box-sizing: border-box;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 
 	& .gatsby-image-wrapper {
 		position: absolute !important;
@@ -91,6 +96,10 @@ h2 {
 
 	& .hero-content {
 		z-index: var(--header-z-index);
+	}
+
+	@media (min-width: 600px) {
+		padding: 12em 6em 8em;
 	}
 }
 

@@ -1,6 +1,6 @@
 /** @format */
 
-header {
+header#site-header {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -9,10 +9,11 @@ header {
 	align-items: flex-start;
 	background-color: var(--header-background-color);
 	font-weight: 300;
-	padding: 4em 6em 4em 2em;
+	padding: 4em 2em;
+	min-width: 50%;
 
 	& h1 {
-		font-size: 5em;
+		font-size: 3em;
 		margin: 0;
 		color: white;
 	}
@@ -33,22 +34,12 @@ header {
 		font-size: 1.5em;
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0;
+		margin: 0 -0.5em;
 		padding: 0;
 
 		& li {
 			list-style: none;
-
-			& ~ li {
-				&:before {
-					font-size: 0.9em;
-					color: var(--link-color);
-					opacity: 0.8;
-					content: '|';
-					padding: 0 0.75em;
-					vertical-align: top;
-				}
-			}
+			margin: 0.25em 0.5em;
 
 			& a {
 				position: relative;
@@ -73,6 +64,32 @@ header {
 					&:before {
 						left: 0;
 						right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	header#site-header {
+
+		& h1 {
+			font-size: 5em;
+		}
+
+		& nav ul {
+			font-size: 1.5em;
+
+			& li {
+				& ~ li {
+					&:before {
+						font-size: 0.9em;
+						color: var(--link-color);
+						opacity: 0.8;
+						content: '|';
+						padding-right: 0.5em;
+						vertical-align: top;
 					}
 				}
 			}

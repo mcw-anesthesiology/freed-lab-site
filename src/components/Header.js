@@ -7,7 +7,7 @@ import '../styles/header.css';
 
 export default function Header({ children, title }) {
 	return (
-		<header>
+		<header id="site-header">
 			{children}
 			{title && <h1>{title}</h1>}
 			<nav>

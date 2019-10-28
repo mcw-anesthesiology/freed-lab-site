@@ -9,18 +9,17 @@ body {
 }
 
 main > section {
-	--section-padding-vertical: 5em;
-	--section-padding-horizontal: 3em;
-
-	margin: 2em 0;
-	padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+	margin: 4em 0;
+	padding: 5em 3em;
 }
 
-@supports (display: grid) {
-	main > section {
-		grid-template-areas: var(--grid-template-areas);
-		grid-template-columns: var(--grid-template-columns);
-		justify-content: center;
+@media (min-width: 768px) {
+	@supports (display: grid) {
+		main > section {
+			grid-template-areas: var(--grid-template-areas);
+			grid-template-columns: var(--grid-template-columns);
+			justify-content: center;
+		}
 	}
 }
 

@@ -32,10 +32,10 @@ export default function Projects() {
 
 	return (
 		<section id="projects">
-			<section>
+			<header>
 				<h2>Projects</h2>
 				<p>Words</p>
-			</section>
+			</header>
 			<ProjectsList projects={projects} />
 		</section>
 	);

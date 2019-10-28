@@ -12,6 +12,7 @@ footer {
 @supports (display: grid) {
 
 	footer {
+		font-size: 0.8em;
 		display: grid;
 		padding: 2em 0;
 		margin: 0;
@@ -31,6 +32,10 @@ footer {
 
 				&, &:visited {
 					color: var(--text-color);
+				}
+
+				&:hover {
+					text-decoration: underline;
 				}
 			}
 
