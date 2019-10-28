@@ -4,9 +4,8 @@ section.team {
 
 	& .hero {
 		height: 350px;
-		padding: 2em;
+		padding: 2em 0;
 		align-items: flex-start;
-		padding-left: var(--background-left);
 
 		& .gatsby-image-wrapper  {
 			z-index: 1;
@@ -14,14 +13,16 @@ section.team {
 	}
 }
 
-@supports (display: gridf) {
+@supports (display: grid) {
 	section.team .hero {
 		display: grid;
-		grid-template-areas: 'left title title';
+		grid-template-areas: var(--grid-template-areas);
 		grid-template-columns: var(--grid-template-columns);
 
 		& .hero-content {
-			grid-area: title;
+			box-sizing: border-box;
+			padding: 1em;
+			grid-area: center;
 		}
 	}
 }

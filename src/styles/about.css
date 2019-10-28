@@ -7,7 +7,7 @@ section.about {
 
 	& > h2 {
 		box-sizing: border-box;
-		width: var(--background-stripe);
+		width: var(--grid-stripe);
 		flex-shrink: 0;
 		flex-grow: 0;
 		padding: 0.5em;
@@ -24,9 +24,10 @@ section.about {
 @supports (display: grid) {
 	section.about {
 		display: grid;
+		grid-template-areas: var(--grid-template-areas);
 
 		& > h2 {
-			grid-area: stripe;
+			grid-area: center;
 		}
 
 		& > div {

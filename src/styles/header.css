@@ -1,6 +1,7 @@
 /** @format */
 
 header {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -8,7 +9,7 @@ header {
 	align-items: flex-start;
 	background-color: var(--header-background-color);
 	font-weight: 300;
-	padding: 4em 2em;
+	padding: 4em 6em 4em 2em;
 
 	& h1 {
 		font-size: 5em;

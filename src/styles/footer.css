@@ -1,5 +1,5 @@
 footer {
-	padding: 1em;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -13,7 +13,13 @@ footer {
 
 	footer {
 		display: grid;
-		grid-gap: 2em;
+		padding: 2em 0;
+		margin: 0;
+		grid-template-areas: var(--grid-template-areas);
 		grid-template-columns: var(--grid-template-columns);
+
+		& .copyright {
+			grid-area: right;
+		}
 	}
 }

@@ -1,58 +1,26 @@
-main {
-
+body {
 	background: linear-gradient(
 		to right,
-		transparent var(--background-left),
-		black calc(var(--background-left)),
-		black calc(var(--background-left) + var(--background-stripe)),
-		transparent calc(var(--background-left) + var(--background-stripe))
+		var(--background-color) calc(50% - var(--background-stripe)),
+		var(--stripe-color) calc(50% - var(--background-stripe)),
+		var(--stripe-color) 50%,
+		var(--background-color) 50%
 	);
+}
 
-	& nav ul {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		padding: 0;
+main > section {
+	--section-padding-vertical: 5em;
+	--section-padding-horizontal: 3em;
 
-		@supports (display: grid) {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-		}
-
-		font-size: 2em;
-
-		& li {
-			list-style: none;
-			text-align: center;
-		}
-
-		& a {
-			text-decoration: none;
-
-			&, &:visited {
-				color: rgba(0, 0, 0, 0.75);
-			}
-
-			&:hover {
-				color: rgba(0, 0, 0, 0.95);
-			}
-		}
-	}
-
-	& > section {
-		--section-padding-vertical: 5em;
-		--section-padding-horizontal: 3em;
-		--grid-template-columns: calc(var(--background-left) - var(--section-padding-horizontal)) var(--background-stripe) calc(var(--background-right) - var(--section-padding-horizontal));
-
-		margin: 2em 0;
-		padding: var(--section-padding-vertical) var(--section-padding-horizontal);
-	}
+	margin: 2em 0;
+	padding: var(--section-padding-vertical) var(--section-padding-horizontal);
 }
 
 @supports (display: grid) {
 	main > section {
 		grid-template-areas: var(--grid-template-areas);
 		grid-template-columns: var(--grid-template-columns);
+		justify-content: center;
 	}
 }
 
@@ -60,5 +28,7 @@ header .mcw-logo {
 	position: absolute;
 	top: 1.5em;
 	left: 1.5em;
-	width: 150px;
+	max-height: 6em;
+	width: auto;
+	max-width: 100%;
 }

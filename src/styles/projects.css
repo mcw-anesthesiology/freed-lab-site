@@ -62,7 +62,7 @@ section.projects {
 @supports (display: grid) {
 	section.projects {
 		display: grid;
-		grid-template-areas: 'intro list list';
+		grid-template-areas: 'intro list list list';
 
 		& > section {
 			grid-area: intro;
