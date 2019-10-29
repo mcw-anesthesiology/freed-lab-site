@@ -129,7 +129,7 @@ export default function Contact() {
 							) : (
 								<button
 									type="submit"
-									className="button"
+									className="button primary left-align"
 									disabled={submitting}
 								>
 									Submit

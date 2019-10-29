@@ -1,0 +1,32 @@
+.images-list {
+	text-align: center;
+	margin: 4em 2em;
+
+	& > span {
+		color: var(--light-text-color);
+		text-transform: lowercase;
+		font-family: var(--heading-font-family);
+		font-size: 1.5em;
+		font-weight: 300;
+	}
+
+	& ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0;
+		margin: 2em;
+
+		& li {
+			list-style: none;
+			flex-basis: 200px;
+			background: white;
+
+			& a {
+
+				& .gatsby-image-wrapper {
+				}
+			}
+		}
+	}
+}

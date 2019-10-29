@@ -71,6 +71,7 @@ main {
 	box-sizing: border-box;
 	font-family: var(--body-font-family);
 	flex-grow: 1;
+	padding: 2em;
 }
 
 h1,
@@ -86,8 +87,33 @@ h2 {
 	font-size: 2em;
 }
 
+.hero {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	& > .gatsby-image-wrapper {
+		position: absolute !important;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	& > .hero-content {
+		z-index: var(--hero-content-z-index);
+
+		& header {
+			z-index: var(--header-z-index);
+		}
+	}
+}
+
 #layout > .hero {
 	padding: 10em 2em 3em;
+	align-items: flex-end;
 
 	@media (min-width: 500px) {
 		padding: 10em 3em 4em;
@@ -105,31 +131,6 @@ h2 {
 		position: absolute !important;
 		top: 1.5em;
 		left: 1.5em;
-	}
-}
-
-.hero {
-	position: relative;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-
-	& > .gatsby-image-wrapper {
-		position: absolute !important;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-	}
-
-	& > .hero-content {
-		z-index: var(--hero-content-z-index);
-
-		& header {
-			z-index: var(--header-z-index);
-		}
 	}
 }
 
@@ -154,15 +155,42 @@ p {
 }
 
 .button {
+	--background-color: var(--floating-block-background-color);
+
+	cursor: pointer;
 	color: var(--text-color);
 	font-family: var(--heading-font-family);
 	font-weight: var(--heading-font-weight);
 	text-transform: var(--heading-text-transform);
-	background-color: var(--primary-color);
 	font-size: 1.5em;
-	padding: 1em 2em 0.5em 0.5em;
-	border: none;
+	padding: 1em 2em;
 	border-radius: 2px;
+	filter: brightness(0.75);
+
+	border: 1px solid var(--background-color);
+	background-color: var(--background-color);
+
+	&, &:hover, &:focus, &:active {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		filter: brightness(1);
+	}
+}
+
+.button.left-align {
+	padding: 1em 2em 0.5em 0.5em;
+}
+
+.button.primary {
+	background-color: var(--primary-color);
+}
+
+.button.comfy {
+	padding: 2em;
 }
 
 .close-button {

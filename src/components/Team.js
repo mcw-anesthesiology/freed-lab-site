@@ -3,8 +3,8 @@
 import React, { useState, useCallback } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { Dialog } from '@reach/dialog';
 
+import Dialog from '../components/Dialog.js';
 import Hero from '../components/Hero.js';
 import '../styles/team.css';
 
@@ -39,7 +39,7 @@ export default function Team() {
 				}
 				heroImage: file(relativePath: { eq: "hero/DSC_2328.jpg" }) {
 					childImageSharp {
-						fluid(maxWidth: 1920, quality: 90, cropFocus: NORTH) {
+						fluid(maxWidth: 1920, quality: 90) {
 							...GatsbyImageSharpFluid
 						}
 					}
@@ -107,7 +107,7 @@ export function TeamMember({ name, postNominal, fields, onClick }) {
 	);
 }
 
-export function TeamMemberDialog({
+function TeamMemberDialog({
 	name,
 	postNominal,
 	title,
@@ -117,19 +117,10 @@ export function TeamMemberDialog({
 }) {
 	return (
 		<Dialog
-			className="dialog team-member-dialog"
+			className="team-member-dialog"
 			aria-label={`${name} team member overview`}
 			onDismiss={onDismiss}
 		>
-			<button
-				type="button"
-				className="close-button"
-				onClick={onDismiss}
-				aria-label="Dismiss"
-			>
-				<span aria-hidden>&times;</span>
-			</button>
-
 			<Img fixed={fields.image.childImageSharp.fixed} />
 			<span className="name accent-text">
 				{name}{' '}

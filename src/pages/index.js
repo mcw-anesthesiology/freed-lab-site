@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { Fragment } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
 
 import Layout from '../components/Layout.js';
@@ -34,7 +34,25 @@ export default function IndexPage({ data }) {
 							fixed={data.mcwLogo.childImageSharp.fixed}
 							alt="MCW - knowledge changing life"
 						/>
-						<Header title={data.site.siteMetadata.title} />
+						<Header>
+							<h1>{data.site.siteMetadata.title}</h1>
+							<nav>
+								<ul>
+									<li>
+										<Link to="#">Home</Link>
+									</li>
+									<li>
+										<Link to="#projects">Projects</Link>
+									</li>
+									<li>
+										<Link to="#team">Team</Link>
+									</li>
+									<li>
+										<Link to="#contact">Contact</Link>
+									</li>
+								</ul>
+							</nav>
+						</Header>
 					</Fragment>
 				</Hero>
 			}

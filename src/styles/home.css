@@ -1,4 +1,4 @@
-body {
+body #layout.home {
 	background: linear-gradient(
 		to right,
 		var(--background-color) calc(50% - var(--background-stripe)),
@@ -8,7 +8,11 @@ body {
 	);
 }
 
-main > section {
+main.home {
+	padding: 0;
+}
+
+main.home > section {
 	--home-section-padding-vertical: 3em;
 	--home-section-padding-horizontal: 1em;
 
@@ -16,14 +20,28 @@ main > section {
 	padding: var(--home-section-padding-vertical) var(--home-section-padding-horizontal);
 }
 
+#layout.home {
+	& > .hero {
+		align-items: flex-start;
+	}
+
+	& header#site-header {
+		align-items: flex-start;
+	}
+
+	& h1 {
+		color: white;
+	}
+}
+
 @media (min-width: 400px) {
-	main > section {
+	main.home > section {
 		--home-section-padding-horizontal: 2em;
 	}
 }
 
 @media (min-width: 600px) {
-	main > section {
+	main.home > section {
 		--home-section-padding-vertical: 5em;
 		--home-section-padding-horizontal: 3em;
 
@@ -33,7 +51,7 @@ main > section {
 
 @media (min-width: 768px) {
 	@supports (display: grid) {
-		main > section {
+		main.home > section {
 			grid-template-areas: var(--grid-template-areas);
 			grid-template-columns: var(--grid-template-columns);
 			justify-content: center;

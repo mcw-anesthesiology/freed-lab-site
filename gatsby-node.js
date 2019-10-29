@@ -8,7 +8,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 	const { createNodeField } = actions;
 	if (node.internal.type === `MarkdownRemark`) {
 		const slug = createFilePath({ node, getNode, basePath: 'projects' });
-		createNodeField({ node, name: 'slug', value: `/projects${slug}` });
+		const fullSlug = `/projects${slug}`;
+		createNodeField({ node, name: 'slug', value: fullSlug });
+		createNodeField({
+			node,
+			name: 'imageGlob',
+			value: `projects${slug}*`
+		});
 	}
 };
 
@@ -23,6 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
 						id
 						fields {
 							slug
+							imageGlob
 						}
 					}
 				}
@@ -35,7 +42,8 @@ exports.createPages = async ({ graphql, actions }) => {
 			path: project.fields.slug,
 			component: path.resolve('./src/templates/project.js'),
 			context: {
-				id: project.id
+				id: project.id,
+				imageGlob: project.fields.imageGlob
 			}
 		});
 	}
