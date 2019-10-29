@@ -1,8 +1,9 @@
 /** @format */
 
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { Dialog } from '@reach/dialog';
 
 import Hero from '../components/Hero.js';
 import '../styles/team.css';
@@ -48,25 +49,89 @@ export default function Team() {
 	);
 	const teamMembers = data.allTeamYaml.edges.map(e => e.node);
 
+	const [dialogMember, setDialogMember] = useState(null);
+
+	const handleMemberClick = useCallback(
+		member => event => {
+			event.preventDefault();
+			setDialogMember(member);
+		},
+		[setDialogMember]
+	);
+
 	return (
 		<section id="team">
-			<Hero fluid={data.heroImage.childImageSharp.fluid} imgStyle={{ objectPosition: 'center top' }}>
+			<Hero
+				fluid={data.heroImage.childImageSharp.fluid}
+				imgStyle={{ objectPosition: 'center top' }}
+			>
 				<h2>People</h2>
 			</Hero>
 			<ul className="team-list">
 				{teamMembers.map(m => (
-					<TeamMember key={m.id} {...m} />
+					<TeamMember
+						key={m.id}
+						{...m}
+						onClick={handleMemberClick(m)}
+					/>
 				))}
 			</ul>
+
+			{dialogMember && (
+				<TeamMemberDialog
+					{...dialogMember}
+					onDismiss={() => {
+						setDialogMember(null);
+					}}
+				/>
+			)}
 		</section>
 	);
 }
 
-export function TeamMember({ name, postNominal, title, bioHtml, fields }) {
+export function TeamMember({ name, postNominal, fields, onClick }) {
 	return (
-		<li className="team-member">
+		<li className="team-list-item">
+			<a href="#" className="team-member" onClick={onClick}>
+				<Img fixed={fields.image.childImageSharp.fixed} />
+				<span className="name accent-text">
+					{name}{' '}
+					{postNominal && postNominal.length > 0 && (
+						<span className="post-nominal-titles">
+							{postNominal.join(', ')}
+						</span>
+					)}
+				</span>
+			</a>
+		</li>
+	);
+}
+
+export function TeamMemberDialog({
+	name,
+	postNominal,
+	title,
+	bioHtml,
+	fields,
+	onDismiss
+}) {
+	return (
+		<Dialog
+			className="dialog team-member-dialog"
+			aria-label={`${name} team member overview`}
+			onDismiss={onDismiss}
+		>
+			<button
+				type="button"
+				className="close-button"
+				onClick={onDismiss}
+				aria-label="Dismiss"
+			>
+				<span aria-hidden>&times;</span>
+			</button>
+
 			<Img fixed={fields.image.childImageSharp.fixed} />
-			<span className="name">
+			<span className="name accent-text">
 				{name}{' '}
 				{postNominal && postNominal.length > 0 && (
 					<span className="post-nominal-titles">
@@ -80,6 +145,6 @@ export function TeamMember({ name, postNominal, title, bioHtml, fields }) {
 				className="bio"
 				dangerouslySetInnerHTML={{ __html: bioHtml }}
 			/>
-		</li>
+		</Dialog>
 	);
 }

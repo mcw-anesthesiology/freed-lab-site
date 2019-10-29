@@ -2,9 +2,12 @@
 
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+
 import 'normalize.css';
 import 'typeface-source-sans-pro';
 import 'typeface-open-sans';
+import '@reach/dialog/styles.css';
+
 import '../styles/global.css';
 
 import Header from './Header.js';
@@ -49,9 +52,7 @@ export default function Layout({
 		<div id="layout" className={className}>
 			{hero || (
 				<Hero fluid={heroImage} {...heroProps}>
-					<Header
-						title={title || data.site.siteMetadata.title}
-					>
+					<Header title={title || data.site.siteMetadata.title}>
 						{headerContent}
 					</Header>
 				</Hero>

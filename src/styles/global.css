@@ -9,7 +9,10 @@ html {
 	--mcw-anesth-light-green-rgb: 88, 185, 71;
 	--mcw-blue-rgb: 52, 89, 107;
 
-	--text-color: white;
+	--light-text-color: #fdfdfd;
+	--dark-text-color: #111;
+	--text-color: var(--light-text-color);
+
 	--border-color: #ddd;
 	--primary-color: orange;
 
@@ -23,17 +26,18 @@ html {
 	--background-color: #333;
 	--stripe-color: black;
 
-	--block-background-rgba: 24, 24, 24;
+	--block-background-rgb: 24, 24, 24;
+	--light-block-background: #eee;
 
 	--header-background-alpha: 0.95;
 	--header-background-color: rgba(
-		var(--block-background-rgba),
+		var(--block-background-rgb),
 		var(--header-background-alpha)
 	);
 
 	--floating-block-alpha: 0.6;
 	--floating-block-background-color: rgba(
-		var(--block-background-rgba),
+		var(--block-background-rgb),
 		var(--floating-block-alpha)
 	);
 
@@ -44,6 +48,7 @@ html {
 	--grid-right: 1fr;
 
 	--header-z-index: 5;
+	--dialog-z-index: 10;
 
 	--grid-template-areas: 'left center right right';
 	--grid-template-columns: var(--grid-left) var(--grid-center)
@@ -123,6 +128,13 @@ p {
 	line-height: 1.5;
 }
 
+.accent-text {
+	color: var(--primary-color);
+	font-family: var(--heading-font-family);
+	font-weight: var(--heading-font-weight);
+	text-transform: var(--heading-text-transform);
+}
+
 .button {
 	color: var(--text-color);
 	font-family: var(--heading-font-family);
@@ -133,4 +145,30 @@ p {
 	padding: 1em 2em 0.5em 0.5em;
 	border: none;
 	border-radius: 2px;
+}
+
+.close-button {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	opacity: 0.5;
+	border: none;
+	background: none;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+[data-reach-dialog-overlay] {
+	z-index: var(--dialog-z-index);
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog {
+	z-index: var(--dialog-z-index);
+	position: relative;
+
+	background-color: var(--light-block-background);
+	color: var(--dark-text-color);
 }

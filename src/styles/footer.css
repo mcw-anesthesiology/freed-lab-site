@@ -5,7 +5,7 @@ footer {
 	justify-content: space-around;
 
 	& .mcw-logo {
-		max-width: 100%;
+		width: 100%;
 		overflow: visible !important;
 	}
 }
