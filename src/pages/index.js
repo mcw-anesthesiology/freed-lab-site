@@ -1,10 +1,13 @@
 /** @format */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
 import Layout from '../components/Layout.js';
+import Hero from '../components/Hero.js';
+import Header from '../components/Header.js';
+
 import SEO from '../components/SEO.js';
 
 import About from '../components/About.js';
@@ -18,18 +21,22 @@ export default function IndexPage({ data }) {
 	return (
 		<Layout
 			className="home"
-			heroImage={data.heroImage.childImageSharp.fluid}
-			heroProps={{
-				imgStyle: {
-					objectPosition: 'left top'
-				}
-			}}
-			headerContent={
-				<Image
-					className="mcw-logo"
-					fixed={data.mcwLogo.childImageSharp.fixed}
-					alt="MCW - knowledge changing life"
-				/>
+			hero={
+				<Hero
+					fluid={data.heroImage.childImageSharp.fluid}
+					imgStyle={{
+						objectPosition: 'left top'
+					}}
+				>
+					<Fragment>
+						<Image
+							className="mcw-logo"
+							fixed={data.mcwLogo.childImageSharp.fixed}
+							alt="MCW - knowledge changing life"
+						/>
+						<Header title={data.site.siteMetadata.title} />
+					</Fragment>
+				</Hero>
 			}
 		>
 			<SEO title="Home" keywords={['Freed', 'Lab']} />

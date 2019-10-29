@@ -9,17 +9,7 @@ header#site-header {
 	align-items: flex-start;
 	background-color: var(--header-background-color);
 	font-weight: 300;
-	padding: 4em 2em;
-
-	@media (min-width: 768px) {
-		padding-right: 6em;
-	}
-
-	& .mcw-logo {
-		position: absolute !important;
-		top: 1.5em;
-		left: 1.5em;
-	}
+	padding: 1em;
 
 	& h1 {
 		font-size: 3em;
@@ -43,12 +33,12 @@ header#site-header {
 		font-size: 1.5em;
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -0.5em;
+		margin: 0 -0.5rem;
 		padding: 0;
 
 		& li {
 			list-style: none;
-			margin: 0.25em 0.5em;
+			margin: 0.25rem 0.5rem;
 
 			& a {
 				position: relative;
@@ -80,8 +70,18 @@ header#site-header {
 	}
 }
 
+@media (min-width: 500px) {
+	header#site-header {
+		padding: 2em;
+		padding-right: 4em;
+	}
+}
+
 @media (min-width: 768px) {
 	header#site-header {
+		padding: 4em 3em;
+		padding-right: 6em;
+
 		& h1 {
 			font-size: 5em;
 		}
@@ -96,7 +96,7 @@ header#site-header {
 						color: var(--link-color);
 						opacity: 0.8;
 						content: '|';
-						padding-right: 0.5em;
+						padding-right: 0.5rem;
 						vertical-align: top;
 					}
 				}

@@ -18,7 +18,7 @@ html {
 
 	--body-font-family: serif;
 	--heading-font-family: 'Source Sans Pro', sans-serif;
-	--heading-font-weight: 300;
+	--heading-font-weight: 500;
 	--heading-text-transform: uppercase;
 
 	--heading-color: var(--primary-color);
@@ -47,6 +47,7 @@ html {
 	--grid-center: var(--background-stripe);
 	--grid-right: 1fr;
 
+	--hero-content-z-index: 2;
 	--header-z-index: 5;
 	--dialog-z-index: 10;
 
@@ -85,6 +86,28 @@ h2 {
 	font-size: 2em;
 }
 
+#layout > .hero {
+	padding: 10em 2em 3em;
+
+	@media (min-width: 500px) {
+		padding: 10em 3em 4em;
+	}
+
+	@media (min-width: 600px) {
+		padding: 10em 4em 6em;
+	}
+
+	@media (min-width: 768px) {
+		padding: 12em 6em 8em;
+	}
+
+	& .mcw-logo {
+		position: absolute !important;
+		top: 1.5em;
+		left: 1.5em;
+	}
+}
+
 .hero {
 	position: relative;
 	box-sizing: border-box;
@@ -102,17 +125,12 @@ h2 {
 	}
 
 	& > .hero-content {
-		z-index: var(--header-z-index);
-	}
+		z-index: var(--hero-content-z-index);
 
-	@media (min-width: 600px) {
-		padding: 12em 6em 8em;
+		& header {
+			z-index: var(--header-z-index);
+		}
 	}
-}
-
-#layout > hero {
-	min-height: 60vh;
-	padding: 8em 2em 2em;
 }
 
 nav svg {

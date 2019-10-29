@@ -9,14 +9,25 @@ body {
 }
 
 main > section {
+	--home-section-padding-vertical: 3em;
+	--home-section-padding-horizontal: 1em;
+
 	margin: 3em 0;
-	padding: 3em 1em;
+	padding: var(--home-section-padding-vertical) var(--home-section-padding-horizontal);
+}
+
+@media (min-width: 400px) {
+	main > section {
+		--home-section-padding-horizontal: 2em;
+	}
 }
 
 @media (min-width: 600px) {
 	main > section {
+		--home-section-padding-vertical: 5em;
+		--home-section-padding-horizontal: 3em;
+
 		margin: 4em 0;
-		padding: 5em 3em;
 	}
 }
 
