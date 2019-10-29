@@ -49,8 +49,22 @@
 		flex-shrink: 1;
 		margin: 1em;
 
+		& .gatsby-image-wrapper {
+			filter: brightness(0.9);
+		}
+
 		& > a {
 			text-decoration: none;
+			color: var(--primary-color);
+
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+
+				& .gatsby-image-wrapper {
+					filter: none;
+				}
+			}
 		}
 	}
 }

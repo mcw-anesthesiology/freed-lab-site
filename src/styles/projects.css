@@ -1,5 +1,5 @@
 #projects header {
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 
 .projects-list {
@@ -14,9 +14,7 @@
 .project-list-item {
 	list-style: none;
 	height: var(--list-item-size);
-	background-size: cover;
-	background-position: center;
-	padding: 0;
+	border: 1px solid rgba(var(--list-item-background), 0.5);
 
 	& .hero {
 		height: 100%;
@@ -40,7 +38,7 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		padding: 0.5em;
-		background-color: rgba(var(--list-item-background), 0.85);
+		background-color: rgba(var(--list-item-background), 0.86);
 		transition-property: background-color;
 		transition-duration: 0.05s;
 		transition-timing-function: ease-in;
@@ -53,7 +51,7 @@
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: rgba(var(--list-item-background), 0.8);
+			background-color: rgba(var(--list-item-background), 0.75);
 		}
 
 		& span {
@@ -66,11 +64,15 @@
 	}
 }
 
-@media (min-width: 768px) {
-	@supports (display: grid) {
+@supports (display: grid) {
+	@media (min-width: 768px) {
 		#projects {
 			display: grid;
 			grid-template-areas: 'intro list list list';
+
+			& header {
+				margin: 0;
+			}
 
 			& > section {
 				grid-area: intro;
