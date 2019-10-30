@@ -7,7 +7,7 @@ import Dialog from './Dialog.js';
 
 import '../styles/images-list.css';
 
-export default function ImagesList({ images, getAlt }) {
+export default function ImagesList({ images, getMeta }) {
 	const [focusedImage, setFocusedImage] = useState(null);
 	const handleItemClick = useCallback(
 		image => event => {
@@ -26,7 +26,7 @@ export default function ImagesList({ images, getAlt }) {
 						<a href="#" onClick={handleItemClick(node)}>
 							<Image
 								fluid={node.childImageSharp.fluid}
-								alt={getAlt(node)}
+								alt={getMeta(node)?.alt}
 							/>
 						</a>
 					</li>
@@ -34,19 +34,31 @@ export default function ImagesList({ images, getAlt }) {
 			</ul>
 
 			{focusedImage && (
-				<Dialog
-					className="focused-image-dialog"
-					aria-label={getAlt(focusedImage)}
+				<FocusedImageDialog
+					image={focusedImage}
+					{...getMeta(focusedImage)}
 					onDismiss={() => {
 						setFocusedImage(null);
 					}}
-				>
-					<Image
-						fluid={focusedImage.childImageSharp.fluid}
-						alt={getAlt(focusedImage)}
-					/>
-				</Dialog>
+				/>
 			)}
 		</div>
+	);
+}
+
+function FocusedImageDialog({ image, src, alt, caption, ...props }) {
+	return (
+		<Dialog
+			className="focused-image-dialog"
+			aria-label={`Focused image: ${alt}`}
+			{...props}
+		>
+			<figure>
+				<Image fluid={image.childImageSharp.fluid} alt={alt} />
+				{caption && (
+					<figcaption>{caption}</figcaption>
+				)}
+			</figure>
+		</Dialog>
 	);
 }

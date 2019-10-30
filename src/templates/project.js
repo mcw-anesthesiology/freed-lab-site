@@ -12,16 +12,12 @@ export default function Project({ data }) {
 	const images = data.allFile.edges.map(e => e.node);
 	const project = data.allMarkdownRemark.edges[0].node;
 
-	const getAlt = useCallback(
-		node => {
-			const obj = project.frontmatter.images.find(o =>
+	const getMeta = useCallback(
+		node =>
+			project.frontmatter.images.find(o =>
 				node.relativePath.includes(o.src)
-			);
-
-			if (obj) {
-				return obj.alt;
-			}
-		},
+			)
+		,
 		[project]
 	);
 
@@ -34,7 +30,7 @@ export default function Project({ data }) {
 			<div dangerouslySetInnerHTML={{ __html: project.html }} />
 
 			{images && images.length > 0 && (
-				<ImagesList images={images} getAlt={getAlt} />
+				<ImagesList images={images} getMeta={getMeta} />
 			)}
 
 			<div className="back-container">
@@ -65,6 +61,7 @@ export const query = graphql`
 						images {
 							src
 							alt
+							caption
 						}
 					}
 					fields {

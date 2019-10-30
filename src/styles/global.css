@@ -254,12 +254,15 @@ p {
 [data-reach-dialog-overlay] {
 	z-index: var(--dialog-z-index);
 	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .dialog {
+	margin: 10vh 5vw;
 	z-index: var(--dialog-z-index);
 	position: relative;
-	max-width: 90vw;
 	min-width: 50vw;
 
 	border: 1px solid;

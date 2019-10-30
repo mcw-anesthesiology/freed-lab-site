@@ -6,7 +6,8 @@ imageStyles:
 order: 4
 images:
   - src: image12.png
-    alt: Something
+    alt: ""
+    caption: ""
 ---
 
 Sepsis is a leading cause of death in critically ill patients. Bacterial-induced vasoplegia, or septic shock, is a state of low vascular resistance leading to end-organ dysfunction and is associated with a high mortality rate. The mechanism of bacterial-induced vasoplegia, or low blood pressure, refractory to pharmacological vasoconstriction, remains unknown. Hydrogen sulfide (H2S) is a known vasodilator at lower concentrations and is produced by most, if not all bacteria. Septic patients have elevated plasma levels of H2S within 24 hours of diagnosis.

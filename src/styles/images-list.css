@@ -32,7 +32,13 @@
 }
 
 .dialog.focused-image-dialog {
-	min-width: 80%;
+	flex-grow: 1;
 	background-color: #222;
 	border-color: #333;
+
+	align-self: center;
+
+	& .gatsby-image-wrapper {
+		background: white;
+	}
 }
