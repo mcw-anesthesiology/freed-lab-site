@@ -35,8 +35,11 @@
 	flex-grow: 1;
 	background-color: #222;
 	border-color: #333;
+	width: auto;
 
-	align-self: center;
+	& figure {
+		margin: 0;
+	}
 
 	& .gatsby-image-wrapper {
 		background: white;

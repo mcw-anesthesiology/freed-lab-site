@@ -29,6 +29,11 @@
 		"comma-style": "warn",
 		"comma-spacing": "warn",
 		"key-spacing": "warn",
-		"react/prop-types": [0]
+		"react/prop-types": [0],
+		"no-unused-vars": ["warn", {
+			"ignoreRestSiblings": true,
+			"varsIgnorePattern": "^_",
+			"argsIgnorePattern": "^_"
+		}]
 	}
 }

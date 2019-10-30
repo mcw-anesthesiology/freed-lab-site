@@ -121,7 +121,10 @@ function TeamMemberDialog({
 			aria-label={`${name} team member overview`}
 			onDismiss={onDismiss}
 		>
-			<Img fixed={fields.image.childImageSharp.fixed} />
+			<Img
+				fixed={fields.image.childImageSharp.fixed}
+				imgStyle={{ objectFit: 'cover' }}
+			/>
 			<span className="name accent-text">
 				{name}{' '}
 				{postNominal && postNominal.length > 0 && (
