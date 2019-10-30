@@ -8,8 +8,6 @@ import Layout from '../components/Layout.js';
 import Hero from '../components/Hero.js';
 import Header from '../components/Header.js';
 
-import SEO from '../components/SEO.js';
-
 import About from '../components/About.js';
 import Projects from '../components/Projects.js';
 import Team from '../components/Team.js';
@@ -57,8 +55,6 @@ export default function IndexPage({ data }) {
 				</Hero>
 			}
 		>
-			<SEO title="Home" keywords={['Freed', 'Lab']} />
-
 			<About />
 			<Projects />
 			<Team />

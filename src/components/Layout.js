@@ -1,7 +1,8 @@
 /** @format */
 
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import { Location } from '@reach/router';
 
 import 'normalize.css';
 import 'typeface-source-sans-pro';
@@ -10,6 +11,7 @@ import '@reach/dialog/styles.css';
 
 import '../styles/global.css';
 
+import SEO from './SEO.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Hero from './Hero.js';
@@ -50,6 +52,8 @@ export default function Layout({
 
 	return (
 		<div id="layout" className={className}>
+			<SEO title={title} lang="en" keywords={['Freed', 'Lab']} />
+
 			{hero || (
 				<Hero fluid={heroImage} {...heroProps}>
 					<Header title={title || data.site.siteMetadata.title}>
@@ -57,6 +61,15 @@ export default function Layout({
 					</Header>
 				</Hero>
 			)}
+			<Location>
+				{({ location }) =>
+					location.pathname !== '/' && (
+						<nav>
+							<Link to="/">Back home</Link>
+						</nav>
+					)
+				}
+			</Location>
 			<main className={className}>{children}</main>
 			<Footer />
 		</div>

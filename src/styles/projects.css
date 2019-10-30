@@ -44,14 +44,11 @@
 		transition-timing-function: ease-in;
 		text-decoration: none;
 
-		&, &:visited {
-			color: var(--link-color);
-		}
-
 		&:hover,
 		&:focus,
 		&:active {
 			background-color: rgba(var(--list-item-background), 0.75);
+			text-decoration: underline;
 		}
 
 		& span {

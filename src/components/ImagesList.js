@@ -34,8 +34,17 @@ export default function ImagesList({ images, getAlt }) {
 			</ul>
 
 			{focusedImage && (
-				<Dialog aria-label={getAlt(focusedImage)} onDismiss={() => { setFocusedImage(null); }}>
-					<Image fluid={focusedImage.childImageSharp.fluid} alt={getAlt(focusedImage)} />
+				<Dialog
+					className="focused-image-dialog"
+					aria-label={getAlt(focusedImage)}
+					onDismiss={() => {
+						setFocusedImage(null);
+					}}
+				>
+					<Image
+						fluid={focusedImage.childImageSharp.fluid}
+						alt={getAlt(focusedImage)}
+					/>
 				</Dialog>
 			)}
 		</div>

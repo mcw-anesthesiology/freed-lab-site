@@ -1,7 +1,7 @@
 main.project {
 
 	& .back-container {
-		padding: 4em;
+		padding: 4em 0;
 		text-align: center;
 	}
 }

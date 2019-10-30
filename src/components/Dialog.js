@@ -2,7 +2,7 @@ import React from 'react';
 import { Dialog as ReachDialog } from '@reach/dialog';
 
 export default function Dialog({
-	className,
+	className = '',
 	onDismiss,
 	children,
 	...dialogProps

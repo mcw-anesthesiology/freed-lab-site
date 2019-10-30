@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/Layout.js';
