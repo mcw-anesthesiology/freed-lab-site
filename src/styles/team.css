@@ -3,7 +3,7 @@
 	padding-right: 0;
 
 	& .hero {
-		height: 40vw;
+		height: 50vw;
 		min-height: 300px;
 		padding: 1em 0;
 		align-items: flex-start;
@@ -47,6 +47,7 @@
 	padding: 4em;
 
 	& > li {
+		flex-basis: 250px;
 		list-style: none;
 		flex-shrink: 1;
 		margin: 1em;

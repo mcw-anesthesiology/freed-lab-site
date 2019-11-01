@@ -2,6 +2,7 @@
 
 import React, { useCallback } from 'react';
 import { graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
 
 import Layout from '../components/Layout.js';
 import ImagesList from '../components/ImagesList.js';
@@ -16,8 +17,7 @@ export default function Project({ data }) {
 		node =>
 			project.frontmatter.images.find(o =>
 				node.relativePath.includes(o.src)
-			)
-		,
+			),
 		[project]
 	);
 
@@ -27,6 +27,18 @@ export default function Project({ data }) {
 			title={project.frontmatter.title}
 			heroImage={project.fields.image.childImageSharp.fluid}
 		>
+			{(project.frontmatter.lead || project.frontmatter.leadImage) && (
+				<div className="lead">
+					{project.frontmatter.leadImage && (
+						<Image
+							fluid={project.fields.leadImage.childImageSharp.fluid}
+							alt={project.frontmatter.leadImageAlt}
+						/>
+					)}
+					{project.frontmatter.lead && <p>{project.frontmatter.lead}</p>}
+				</div>
+			)}
+
 			<div dangerouslySetInnerHTML={{ __html: project.html }} />
 
 			{images && images.length > 0 && (
@@ -63,11 +75,17 @@ export const query = graphql`
 							alt
 							caption
 						}
+						lead
+						# leadImage
+						# leadImageAlt
 					}
 					fields {
 						image {
 							...HeroImage
 						}
+						# leadImage {
+						#	...HeroImage
+						# }
 					}
 					html
 					excerpt

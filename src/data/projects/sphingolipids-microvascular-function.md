@@ -7,6 +7,9 @@ order: 1
 images:
   - src: image11.png
     alt: ""
+lead: |
+  Knowledge of how this pathway can be maniuplated my lead to novel therapies
+  for treatment and prevention of cardiovascular disease
 ---
 
 Vasodilation to shear stress (flow-induced dilation; FID), is an endothelium-dependent process important for maintaining vascular homeostasis. We have previously shown that risk factors for, or the presence of coronary artery disease (CAD), evokes a transition in the endothelial mediator of FID from nitric oxide (NO) to mitochondrial-derived hydrogen peroxide (H2O2). Although both factors elicit smooth muscle relaxation, the non-vasomotor effects of each are generally opposite with NO stimulating anti-inflammatory, anti-thrombotic, and anti-proliferative pathways, compared to the pro-inflammatory, pro-thrombotic, and pro-atherogenic nature of H2O2. Bioactive lipids, known as sphingolipids, play an essential role in cardiovascular pathophysiology.

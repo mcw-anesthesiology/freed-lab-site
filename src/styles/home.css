@@ -26,6 +26,10 @@ main.home > section {
 
 	& > .hero {
 		align-items: flex-start;
+
+		& > .gatsby-image-wrapper {
+			opacity: 1;
+		}
 	}
 
 	& header#site-header {

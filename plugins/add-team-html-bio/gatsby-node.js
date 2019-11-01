@@ -44,6 +44,14 @@ exports.onCreateNode = async ({ node, actions }) => {
 					value: `../../${node.frontmatter.image}`
 				});
 			}
+
+			if (node.frontmatter.leadImage) {
+				actions.createNodeField({
+					node,
+					name: 'leadImage',
+					value: `../../${node.frontmatter.leadImage}`
+				});
+			}
 		}
 	}
 };

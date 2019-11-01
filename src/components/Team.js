@@ -25,8 +25,8 @@ export default function Team() {
 								image {
 									childImageSharp {
 										fixed(
-											width: 150
-											height: 150
+											width: 200
+											height: 200
 											quality: 95
 										) {
 											...GatsbyImageSharpFixed

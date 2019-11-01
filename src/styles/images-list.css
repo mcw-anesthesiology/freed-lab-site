@@ -19,14 +19,8 @@
 
 		& li {
 			list-style: none;
-			flex-basis: 200px;
+			flex-basis: 350px;
 			background: white;
-
-			& a {
-
-				& .gatsby-image-wrapper {
-				}
-			}
 		}
 	}
 }

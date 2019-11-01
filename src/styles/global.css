@@ -22,7 +22,8 @@ html {
 	--heading-font-family: 'Source Sans Pro', sans-serif;
 	--heading-font-weight: 500;
 	--heading-text-transform: uppercase;
-	--link-font-family: 'Source Sans Pro', sans-serif;
+	--link-font-family: var(--heading-font-family);
+	--accent-font-family: var(--heading-font-family);
 
 	--heading-color: var(--primary-color);
 	--link-color: var(--primary-color);
@@ -151,8 +152,12 @@ a {
 #layout > .hero {
 	min-height: 100vh;
 	align-items: flex-end;
-
+	justify-content: flex-end;
 	padding: 10em 2em 3em;
+
+	& > .gatsby-image-wrapper {
+		opacity: 0.2;
+	}
 
 	@media (min-width: 500px) {
 		padding: 10em 3em 4em;
