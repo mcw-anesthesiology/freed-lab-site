@@ -13,7 +13,7 @@ html {
 	--dark-text-color: #111;
 	--text-color: var(--light-text-color);
 
-	--primary-color-rgb: 255, 165, 0;
+	--primary-color-rgb: 235, 144, 55;
 
 	--border-color: #ddd;
 	--primary-color: rgb(var(--primary-color-rgb));
@@ -48,7 +48,7 @@ html {
 		var(--floating-block-alpha)
 	);
 
-	--background-stripe: 125px;
+	--background-stripe: 200px;
 
 	--grid-left: 1fr;
 	--grid-center: var(--background-stripe);
@@ -80,6 +80,14 @@ main {
 	font-family: var(--body-font-family);
 	flex-grow: 1;
 	padding: 2em;
+
+	@media (min-width: 400px) {
+		font-size: 1.15em;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 1.25em;
+	}
 }
 
 h1,
@@ -92,7 +100,7 @@ h3 {
 }
 
 h2 {
-	font-size: 2em;
+	font-size: 2.5em;
 }
 
 a {
@@ -141,8 +149,10 @@ a {
 }
 
 #layout > .hero {
-	padding: 10em 2em 3em;
+	min-height: 100vh;
 	align-items: flex-end;
+
+	padding: 10em 2em 3em;
 
 	@media (min-width: 500px) {
 		padding: 10em 3em 4em;

@@ -16,6 +16,8 @@ main.home > section {
 	--home-section-padding-vertical: 3em;
 	--home-section-padding-horizontal: 1em;
 
+	min-height: 100vh;
+	box-sizing: border-box;
 	margin: 3em 0;
 	padding: var(--home-section-padding-vertical) var(--home-section-padding-horizontal);
 }

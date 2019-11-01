@@ -55,16 +55,18 @@ export default function Projects() {
 
 export function ProjectsList({ projects }) {
 	return (
-		<ul className="projects-list">
-			{projects.map(project => (
-				<ProjectListItem
-					key={project.id}
-					html={project.html}
-					{...project.frontmatter}
-					{...project.fields}
-				/>
-			))}
-		</ul>
+		<div className="projects-list-container">
+			<ul className="projects-list">
+				{projects.map(project => (
+					<ProjectListItem
+						key={project.id}
+						html={project.html}
+						{...project.frontmatter}
+						{...project.fields}
+					/>
+				))}
+			</ul>
+		</div>
 	);
 }
 
