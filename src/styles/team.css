@@ -7,10 +7,11 @@
 		min-height: 300px;
 		padding: 1em 0;
 		align-items: flex-start;
+		background-color: var(--background-color);
 
 		& .gatsby-image-wrapper  {
 			z-index: 1;
-			opacity: 0.85;
+			opacity: 0.5;
 		}
 
 		& h2 {

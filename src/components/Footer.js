@@ -19,7 +19,7 @@ export default function Footer() {
 				relativePath: { eq: "icons/mcw-logo-big-white.png" }
 			) {
 				childImageSharp {
-					fixed(width: 100) {
+					fixed(width: 180) {
 						...GatsbyImageSharpFixed
 					}
 				}
@@ -31,7 +31,7 @@ export default function Footer() {
 		<footer>
 			<div></div>
 
-			<div>
+			<div className="logo-container">
 				<Image
 					className="mcw-logo"
 					fixed={data.mcwLogo.childImageSharp.fixed}

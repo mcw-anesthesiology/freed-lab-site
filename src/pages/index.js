@@ -18,6 +18,7 @@ import '../styles/home.css';
 export default function IndexPage({ data }) {
 	return (
 		<Layout
+			title={data.site.siteMetadata.title}
 			className="home"
 			hero={
 				<Hero
@@ -37,16 +38,16 @@ export default function IndexPage({ data }) {
 							<nav>
 								<ul>
 									<li>
-										<Link to="#">Home</Link>
+										<a href="#">Home</a>
 									</li>
 									<li>
-										<Link to="#projects">Projects</Link>
+										<a href="#projects">Projects</a>
 									</li>
 									<li>
-										<Link to="#team">Team</Link>
+										<a href="#team">Team</a>
 									</li>
 									<li>
-										<Link to="#contact">Contact</Link>
+										<a href="#contact">Contact</a>
 									</li>
 								</ul>
 							</nav>

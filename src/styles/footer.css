@@ -4,9 +4,15 @@ footer {
 	flex-direction: row;
 	justify-content: space-around;
 
-	& .mcw-logo {
-		width: 100%;
-		overflow: visible !important;
+	& .logo-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& .mcw-logo {
+			width: 100%;
+		}
 	}
 }
 

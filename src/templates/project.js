@@ -26,16 +26,25 @@ export default function Project({ data }) {
 			className="project"
 			title={project.frontmatter.title}
 			heroImage={project.fields.image.childImageSharp.fluid}
+			backNav={
+				<nav>
+					<Link to="/#projects">Back to projects</Link>
+				</nav>
+			}
 		>
 			{(project.frontmatter.lead || project.frontmatter.leadImage) && (
 				<div className="lead">
 					{project.frontmatter.leadImage && (
 						<Image
-							fluid={project.fields.leadImage.childImageSharp.fluid}
+							fluid={
+								project.fields.leadImage.childImageSharp.fluid
+							}
 							alt={project.frontmatter.leadImageAlt}
 						/>
 					)}
-					{project.frontmatter.lead && <p>{project.frontmatter.lead}</p>}
+					{project.frontmatter.lead && (
+						<p>{project.frontmatter.lead}</p>
+					)}
 				</div>
 			)}
 

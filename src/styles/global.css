@@ -18,12 +18,24 @@ html {
 	--border-color: #ddd;
 	--primary-color: rgb(var(--primary-color-rgb));
 
-	--body-font-family: serif;
-	--heading-font-family: 'Source Sans Pro', sans-serif;
-	--heading-font-weight: 500;
+	--body-font-family: 'minion-pro', serif;
+	--body-font-style: normal;
+	--body-font-weight: 400;
+
+	--heading-font-family: 'zeitung-micro', sans-serif;
+	--heading-font-style: normal;
+	--heading-font-weight: 200;
 	--heading-text-transform: uppercase;
+
 	--link-font-family: var(--heading-font-family);
+	--link-font-style: var(--heading-font-style);
+	--link-font-weight: var(--heading-font-weight);
+	--link-text-transform: var(--heading-text-transform);
+
 	--accent-font-family: var(--heading-font-family);
+	--accent-font-style: var(--heading-font-style);
+	--accent-font-weight: var(--heading-font-weight);
+	--accent-text-transform: var(--heading-text-transform);
 
 	--heading-color: var(--primary-color);
 	--link-color: var(--primary-color);
@@ -79,6 +91,8 @@ body {
 main {
 	box-sizing: border-box;
 	font-family: var(--body-font-family);
+	font-style: var(--body-font-style);
+	font-weight: var(--body-font-weight);
 	flex-grow: 1;
 	padding: 2em;
 
@@ -95,9 +109,10 @@ h1,
 h2,
 h3 {
 	font-family: var(--heading-font-family);
-	color: var(--heading-color);
+	font-style: var(--headong-font-style);
 	font-weight: var(--heading-font-weight);
 	text-transform: var(--heading-text-transform);
+	color: var(--heading-color);
 }
 
 h2 {
@@ -107,6 +122,8 @@ h2 {
 a {
 	text-decoration: none;
 	font-family: var(--link-font-family);
+	font-style: var(--link-font-style);
+	font-weight: var(--link-font-weight);
 	color: var(--link-color);
 
 	&:visited {
@@ -214,9 +231,9 @@ p {
 
 .accent-text {
 	color: var(--primary-color);
-	font-family: var(--heading-font-family);
-	font-weight: var(--heading-font-weight);
-	text-transform: var(--heading-text-transform);
+	font-family: var(--accent-font-family);
+	font-weight: var(--accent-font-weight);
+	text-transform: var(--accent-text-transform);
 }
 
 .button {
@@ -224,9 +241,9 @@ p {
 	display: inline-block;
 
 	cursor: pointer;
-	font-family: var(--heading-font-family);
-	font-weight: var(--heading-font-weight);
-	text-transform: var(--heading-text-transform);
+	font-family: var(--accent-font-family);
+	font-weight: var(--accent-font-weight);
+	text-transform: var(--accent-text-transform);
 	font-size: 1.5em;
 	padding: 0.75em 1em;
 	border-radius: 2px;

@@ -3,10 +3,9 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { Location } from '@reach/router';
+import { Helmet } from 'react-helmet';
 
 import 'normalize.css';
-import 'typeface-source-sans-pro';
-import 'typeface-open-sans';
 import '@reach/dialog/styles.css';
 
 import '../styles/global.css';
@@ -23,7 +22,8 @@ export default function Layout({
 	hero,
 	heroImage,
 	heroProps = {},
-	headerContent
+	headerContent,
+	backNav
 }) {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
@@ -53,6 +53,12 @@ export default function Layout({
 	return (
 		<div id="layout" className={className}>
 			<SEO title={title} lang="en" keywords={['Freed', 'Lab']} />
+			<Helmet>
+				<link
+					rel="stylesheet"
+					href="https://use.typekit.net/uzs1okq.css"
+				/>
+			</Helmet>
 
 			{hero || (
 				<Hero fluid={heroImage} {...heroProps}>
@@ -61,15 +67,17 @@ export default function Layout({
 					</Header>
 				</Hero>
 			)}
-			<Location>
-				{({ location }) =>
-					location.pathname !== '/' && (
-						<nav>
-							<Link to="/">Back home</Link>
-						</nav>
-					)
-				}
-			</Location>
+			{backNav || (
+				<Location>
+					{({ location }) =>
+						location.pathname !== '/' && (
+							<nav>
+								<Link to="/">Back home</Link>
+							</nav>
+						)
+					}
+				</Location>
+			)}
 			<main className={className}>{children}</main>
 			<Footer />
 		</div>
