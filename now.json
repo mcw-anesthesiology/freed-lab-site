@@ -27,6 +27,12 @@
 		"MAIL_FROM": "contact@freed-lab.science",
 		"MAIL_HOST": "@freed-lab-mail-host",
 		"MAIL_USER": "@freed-lab-mail-user",
-		"MAIL_PASS": "@freed-lab-mail-pass"
+		"MAIL_PASS": "@freed-lab-mail-pass",
+		"GATSBY_STAFF_ENDPOINT": "@staff-api-endpoint"
+	},
+	"build": {
+		"env": {
+			"GATSBY_STAFF_ENDPOINT": "@staff-api-endpoint"
+		}
 	}
 }

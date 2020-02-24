@@ -12,6 +12,7 @@ import About from '../components/About.js';
 import Projects from '../components/Projects.js';
 import Team from '../components/Team.js';
 import Contact from '../components/Contact.js';
+import Publications from '../components/Publications.js';
 
 import '../styles/home.css';
 
@@ -60,6 +61,7 @@ export default function IndexPage({ data }) {
 			<Projects />
 			<Team />
 			<Contact />
+			<Publications />
 		</Layout>
 	);
 }
