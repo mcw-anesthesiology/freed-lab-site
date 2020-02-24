@@ -46,7 +46,6 @@ export default function Projects() {
 		<section id="projects">
 			<header>
 				<h2>Projects</h2>
-				<p>Words</p>
 			</header>
 			<ProjectsList projects={projects} />
 		</section>
