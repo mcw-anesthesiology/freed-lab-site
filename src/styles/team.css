@@ -1,6 +1,7 @@
 #team {
 	padding-left: 0;
 	padding-right: 0;
+	padding-top: 0;
 
 	& .hero {
 		height: 50vw;
@@ -45,62 +46,56 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	padding: 4em;
+	margin: 4em;
 
 	& > li {
 		flex-basis: 250px;
 		list-style: none;
 		flex-shrink: 1;
 		margin: 1em;
+	}
 
-		& .gatsby-image-wrapper {
-			filter: brightness(0.9);
-		}
+	@supports (display: gridf) {
+		display: grid;
+		grid-gap: 1em;
+		justify-items: center;
+		grid-template-columns: repeat(auto-fit, 250px);
 
-		& > a {
-			text-decoration: none;
-			color: var(--primary-color);
-
-			&:hover,
-			&:focus {
-				text-decoration: underline;
-
-				& .gatsby-image-wrapper {
-					filter: none;
-				}
-			}
+		& > li {
+			grid-row: var(--grid-row);
+			margin: 0;
 		}
 	}
 }
 
-.team-member,
-.team-member-dialog {
+.team-list-item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 1em;
+	background-color: #111;
+	font-family: var(--accent-font-family);
 
 	& > * {
 		margin-bottom: 0.5em;
 	}
 
-	& > :last-child {
-		margin-bottom: 0;
-	}
-}
-
-.team-member {
-	padding: 1em;
-}
-
-.team-member-dialog {
-	width: 500px;
-	padding: 3em;
-
 	& .title {
 		text-align: center;
 	}
 
-	& .bio {
+	& .title,
+	& .email {
+		font-size: 0.8em;
+	}
 
+	& .gatsby-image-wrapper {
+		filter: brightness(0.9);
+		width: 200px !important;
+		height: 200px !important;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
 	}
 }

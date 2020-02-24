@@ -17,4 +17,4 @@ Hydroxocobalamin, or vitamin B12a, is a known H2S scavenger and has been used cl
 Collaborators:
 
 - Rodney Willoughby MD, Pediatric Infectious Disease
-- Neil Hogg PhD, MCW Redox Center
+- Jayshil Patel MD, Pulmonary and Critical Care Medicine

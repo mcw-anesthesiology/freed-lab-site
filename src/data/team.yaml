@@ -3,38 +3,40 @@
     - MD
     - PhD
   title: Principal Investigator
-  bio: |
-    Dr. Freed is an Assistant Professor and Director of Clinical Research
-    in the Department of Anesthesiology.
+  email: jfreed@mcw.edu
   image: freed-coat.jpg
+  row: 1
 - name: Mary Schulz
-  title: Lab Coordinator
-  bio: |
-    Mary joined the Freed Lab as a Research Technologist in 2017 and is now Lab Coordinator.
+  title: Lab Coordinator I
+  email: maschulz@mcw.edu
   image: schulz.jpg
+  row: 1
 - name: Boran Katunaric
   postNominal:
     - MD
   title: Post-doctoral Fellow
-  bio: |
-    Dr. Katunaric joined the Freed Lab as a post-doctoral fellow in 2018.
+  email: bkatunaric@mcw.edu
   image: katunaric.jpg
+  row: 1
 - name: Kate Cohen
   postNominal:
     - MD
-  title: Internal Medicine Resident/Post-doctoral Fellow
-  bio: |
-    Dr. Cohen joined the lab in 2019 as a post-doctoral fellow on an NIH R38 grant. Following her two-year lab training she will continue as a fellow in Cardiology.
+  title: Internal Medicine Resident
+  email: kecohen@mcw.edu
   image: cohen.jpg
+  row: 1
 - name: Kelsey Walters
-  bio: |
-    Kelsey joined the lab in 2017 as part of the medical summer student research program (NHLBI T35 fellowship) and continued on in the Honors in Research program at MCW. She plans to specialize in Pediatrics.
+  title: 4<sup>th</sup> year medical student
+  email: kwalters@mcw.edu
   image: walters.jpg
+  row: 2
 - name: Forrest Stehula
-  bio: |
-    Forrest joined the lab in 2019 as part of the medical summer student research program (NHLBI T35 fellowship).
+  title: 2<sup>nd</sup> year medical student
+  email: fstehula@mcw.edu
   image: stehula.jpg
+  row: 2
 - name: Sarah Meeuwsen
-  bio: |
-    Sarah joined the lab in 2019 as part of the medical summer student research program (NIA T35 fellowship).
+  title: 2<sup>nd</sup> year medical student
+  email: smeeuwsen@mcw.edu
   image: meeuwsen.jpg
+  row: 2

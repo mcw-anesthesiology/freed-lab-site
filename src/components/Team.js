@@ -4,7 +4,6 @@ import React, { useState, useCallback } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import Dialog from '../components/Dialog.js';
 import Hero from '../components/Hero.js';
 import '../styles/team.css';
 
@@ -19,8 +18,9 @@ export default function Team() {
 							name
 							postNominal
 							title
-							bioHtml
+							email
 							image
+							row
 							fields {
 								image {
 									childImageSharp {
@@ -49,15 +49,19 @@ export default function Team() {
 	);
 	const teamMembers = data.allTeamYaml.edges.map(e => e.node);
 
-	const [dialogMember, setDialogMember] = useState(null);
+	const rowMap = new Map();
 
-	const handleMemberClick = useCallback(
-		member => event => {
-			event.preventDefault();
-			setDialogMember(member);
-		},
-		[setDialogMember]
-	);
+	for (const member of teamMembers) {
+		let row = rowMap.get(member.row);
+		if (!row) {
+			row = [];
+			rowMap.set(member.row, row);
+		}
+
+		row.push(member);
+	}
+
+	const rows = Array.from(rowMap.entries());
 
 	return (
 		<section id="team">
@@ -67,64 +71,21 @@ export default function Team() {
 			>
 				<h2>People</h2>
 			</Hero>
-			<ul className="team-list">
-				{teamMembers.map(m => (
-					<TeamMember
-						key={m.id}
-						{...m}
-						onClick={handleMemberClick(m)}
-					/>
-				))}
-			</ul>
-
-			{dialogMember && (
-				<TeamMemberDialog
-					{...dialogMember}
-					onDismiss={() => {
-						setDialogMember(null);
-					}}
-				/>
-			)}
+			{rows.map(([row, members]) => (
+				<ul key={row} className="team-list">
+					{members.map(m => (
+						<TeamMember key={m.id} {...m} />
+					))}
+				</ul>
+			))}
 		</section>
 	);
 }
 
-export function TeamMember({ name, postNominal, fields, onClick }) {
+export function TeamMember({ name, postNominal, title, email, row, fields }) {
 	return (
-		<li className="team-list-item">
-			<a href="#" className="team-member" onClick={onClick}>
-				<Img fixed={fields.image.childImageSharp.fixed} />
-				<span className="name accent-text">
-					{name}{' '}
-					{postNominal && postNominal.length > 0 && (
-						<span className="post-nominal-titles">
-							{postNominal.join(', ')}
-						</span>
-					)}
-				</span>
-			</a>
-		</li>
-	);
-}
-
-function TeamMemberDialog({
-	name,
-	postNominal,
-	title,
-	bioHtml,
-	fields,
-	onDismiss
-}) {
-	return (
-		<Dialog
-			className="team-member-dialog"
-			aria-label={`${name} team member overview`}
-			onDismiss={onDismiss}
-		>
-			<Img
-				fixed={fields.image.childImageSharp.fixed}
-				imgStyle={{ objectFit: 'cover' }}
-			/>
+		<li className="team-list-item" style={{ gridRow: row }}>
+			<Img fixed={fields.image.childImageSharp.fixed} />
 			<span className="name accent-text">
 				{name}{' '}
 				{postNominal && postNominal.length > 0 && (
@@ -133,12 +94,14 @@ function TeamMemberDialog({
 					</span>
 				)}
 			</span>
-			<span className="title">{title}</span>
-
-			<div
-				className="bio"
-				dangerouslySetInnerHTML={{ __html: bioHtml }}
+			<span
+				className="title"
+				dangerouslySetInnerHTML={{ __html: title }}
 			/>
-		</Dialog>
+
+			<span className="email">
+				<a href={`mailto:${email}`}>{email}</a>
+			</span>
+		</li>
 	);
 }
