@@ -8,7 +8,7 @@ main.project {
 
 	& .lead {
 		box-sizing: border-box;
-		font-size: 2.5em;
+		font-size: 2em;
 
 		& p {
 			font-family: var(--accent-font-family);
@@ -20,10 +20,17 @@ main.project {
 
 @media (min-width: 768px) {
 	main.project {
-		& .lead {
-			padding-right: 2em;
-			width: 50%;
-			float: left;
+		& article {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			width: 100%;
+
+			& .lead {
+				padding-right: 2em;
+				width: 50%;
+				flex-shrink: 0;
+			}
 		}
 	}
 }

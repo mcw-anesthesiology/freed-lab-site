@@ -32,23 +32,27 @@ export default function Project({ data }) {
 				</nav>
 			}
 		>
-			{(project.frontmatter.lead || project.frontmatter.leadImage) && (
-				<div className="lead">
-					{project.frontmatter.leadImage && (
-						<Image
-							fluid={
-								project.fields.leadImage.childImageSharp.fluid
-							}
-							alt={project.frontmatter.leadImageAlt}
-						/>
-					)}
-					{project.frontmatter.lead && (
-						<p>{project.frontmatter.lead}</p>
-					)}
-				</div>
-			)}
+			<article>
+				{(project.frontmatter.lead ||
+					project.frontmatter.leadImage) && (
+					<div className="lead">
+						{project.frontmatter.leadImage && (
+							<Image
+								fluid={
+									project.fields.leadImage.childImageSharp
+										.fluid
+								}
+								alt={project.frontmatter.leadImageAlt}
+							/>
+						)}
+						{project.frontmatter.lead && (
+							<p>{project.frontmatter.lead}</p>
+						)}
+					</div>
+				)}
 
-			<div dangerouslySetInnerHTML={{ __html: project.html }} />
+				<div dangerouslySetInnerHTML={{ __html: project.html }} />
+			</article>
 
 			{images && images.length > 0 && (
 				<ImagesList images={images} getMeta={getMeta} />

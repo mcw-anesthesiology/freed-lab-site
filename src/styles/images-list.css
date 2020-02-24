@@ -18,6 +18,7 @@
 		margin: 2em;
 
 		& li {
+			margin: 1em;
 			list-style: none;
 			flex-basis: 350px;
 			background: white;

@@ -227,7 +227,10 @@ nav svg {
 
 p {
 	line-height: 1.5;
+}
 
+p,
+ul {
 	font-size: 1.25em;
 }
 
