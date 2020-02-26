@@ -18,6 +18,12 @@ html {
 	--border-color: #ddd;
 	--primary-color: rgb(var(--primary-color-rgb));
 
+	--secondary-text-opacity: 0.75;
+	--secondary-color: rgba(
+		var(--primary-color-rgb),
+		var(--secondary-text-opacity)
+	);
+
 	--body-font-family: 'minion-pro', serif;
 	--body-font-style: normal;
 	--body-font-weight: 400;
@@ -236,6 +242,13 @@ ul {
 
 .accent-text {
 	color: var(--primary-color);
+	font-family: var(--accent-font-family);
+	font-weight: var(--accent-font-weight);
+	text-transform: var(--accent-text-transform);
+}
+
+.secondary-accent-text {
+	color: var(--secondary-color);
 	font-family: var(--accent-font-family);
 	font-weight: var(--accent-font-weight);
 	text-transform: var(--accent-text-transform);

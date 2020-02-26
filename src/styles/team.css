@@ -79,10 +79,16 @@
 
 	& > * {
 		margin-bottom: 0.5em;
+		text-align: center;
 	}
 
 	& .title {
 		text-align: center;
+	}
+
+	& .post-nominal-titles {
+		display: inline-block;
+		color: var(--secondary-color);
 	}
 
 	& .title,

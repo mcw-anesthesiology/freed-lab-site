@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -89,9 +89,9 @@ export function TeamMember({ name, postNominal, title, email, row, fields }) {
 			<span className="name accent-text">
 				{name}{' '}
 				{postNominal && postNominal.length > 0 && (
-					<span className="post-nominal-titles">
-						{postNominal.join(', ')}
-					</span>
+						<span className="post-nominal-titles">
+							{postNominal.join(', ')}
+						</span>
 				)}
 			</span>
 			<span
