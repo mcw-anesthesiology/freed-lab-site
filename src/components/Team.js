@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 import Hero from '../components/Hero.js';
 import Publications from '../components/Publications.js';
@@ -81,13 +82,21 @@ export default function Team() {
 				</ul>
 			))}
 
-			<div className="publications">
-				<h3>Recent publications</h3>
-				<Publications limit={3} />
+			<div className="feeds">
+				<div className="publications">
+					<h3>Recent publications</h3>
+					<Publications limit={3} />
 
-				<Link to="/publications">
-					See all
-				</Link>
+					<Link to="/publications">See all</Link>
+				</div>
+				<div className="twitter">
+					<TwitterTimelineEmbed
+						sourceType="profile"
+						screenName="labfreed"
+						theme="dark"
+						autoHeight
+					/>
+				</div>
 			</div>
 		</section>
 	);
