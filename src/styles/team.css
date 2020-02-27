@@ -19,6 +19,27 @@
 			margin: 0;
 		}
 	}
+
+	& .publications {
+
+		& h3 {
+			margin-top: 0;
+			color: var(--light-text-color);
+		}
+
+		padding: 2em;
+
+		margin: 1em 4em;
+		background: var(--floating-block-background-color);
+
+		& .publications-list {
+			margin-bottom: 3em;
+		}
+
+		@media (min-width: 768px) {
+			padding: 4em;
+		}
+	}
 }
 
 @supports (display: grid) {

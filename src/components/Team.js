@@ -1,10 +1,12 @@
 /** @format */
 
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Hero from '../components/Hero.js';
+import Publications from '../components/Publications.js';
+
 import '../styles/team.css';
 
 export default function Team() {
@@ -78,6 +80,15 @@ export default function Team() {
 					))}
 				</ul>
 			))}
+
+			<div className="publications">
+				<h3>Recent publications</h3>
+				<Publications limit={3} />
+
+				<Link to="/publications">
+					See all
+				</Link>
+			</div>
 		</section>
 	);
 }
@@ -89,9 +100,9 @@ export function TeamMember({ name, postNominal, title, email, row, fields }) {
 			<span className="name accent-text">
 				{name}{' '}
 				{postNominal && postNominal.length > 0 && (
-						<span className="post-nominal-titles">
-							{postNominal.join(', ')}
-						</span>
+					<span className="post-nominal-titles">
+						{postNominal.join(', ')}
+					</span>
 				)}
 			</span>
 			<span

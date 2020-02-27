@@ -1,0 +1,15 @@
+main.publications {
+
+	@media (min-width: 768px) {
+		padding: 2em 4em;
+	}
+}
+
+.publications-list {
+	font-size: 1em;
+	padding-left: 1em;
+
+	& li ~ li {
+		margin-top: 1em;
+	}
+}

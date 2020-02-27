@@ -5,10 +5,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
+import '../styles/publications.css';
+
 const PUBLICATIONS_QUERY = gql`
-	query PublicationsQuery($emails: [String]) {
+	query PublicationsQuery($emails: [String], $limit: Int) {
 		staff(emails: $emails) {
-			publications {
+			publications(limit: $limit) {
 				id
 				url
 				title
@@ -19,7 +21,7 @@ const PUBLICATIONS_QUERY = gql`
 	}
 `;
 
-export default function AboutSection() {
+export default function Publications({ limit }) {
 	const data = useStaticQuery(
 		graphql`
 			query {
@@ -38,7 +40,7 @@ export default function AboutSection() {
 	const emails = teamMembers.map(m => m.email);
 
 	const { data: publicationsData } = useQuery(PUBLICATIONS_QUERY, {
-		variables: { emails }
+		variables: { emails, limit }
 	});
 
 	let publications = useMemo(() => {
@@ -55,10 +57,12 @@ export default function AboutSection() {
 		const publications = Array.from(map.values());
 
 		publications.sort((a, b) => {
-			if (a.pubDate < b.pubDate) return -1;
-			if (a.pubDate > b.pubDate) return 1;
+			if (a.pubDate > b.pubDate) return -1;
+			if (a.pubDate < b.pubDate) return 1;
 			return 0;
 		});
+
+		publications.slice(0, limit);
 
 		return publications;
 	}, [publicationsData]);
@@ -66,16 +70,26 @@ export default function AboutSection() {
 	if (!publications.length) return null;
 
 	return (
-		<section id="publications">
-			<ul>
-				{publications.map(publication => (
-					<PublicationItem key={publication.id} {...publication} />
-				))}
-			</ul>
-		</section>
+		<PublicationsList publications={publications} />
 	);
 }
 
-export function PublicationItem({ id, url, title, pubDate, citation }) {
-	return <li>{citation}</li>;
+export function PublicationsList({ publications }) {
+	return (
+		<ul className="publications-list">
+			{publications.map(publication => (
+				<PublicationItem key={publication.id} {...publication} />
+			))}
+		</ul>
+	);
+}
+
+export function PublicationItem({ citation, url }) {
+	return (
+		<li>
+			<a href={url} target="_blank">
+				{citation}
+			</a>
+		</li>
+	);
 }
