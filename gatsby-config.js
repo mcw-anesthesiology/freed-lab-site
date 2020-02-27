@@ -17,6 +17,7 @@ module.exports = {
 				phone: '414-955-5854'
 			}
 		],
+		twitter: 'labfreed',
 		attributions: [
 			{
 				name: 'Project Launch',

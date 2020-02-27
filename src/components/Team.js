@@ -14,6 +14,11 @@ export default function Team() {
 	const data = useStaticQuery(
 		graphql`
 			query {
+				site {
+					siteMetadata {
+						twitter
+					}
+				}
 				allTeamYaml {
 					edges {
 						node {
@@ -50,6 +55,7 @@ export default function Team() {
 			}
 		`
 	);
+	const { twitter } = data.site.siteMetadata;
 	const teamMembers = data.allTeamYaml.edges.map(e => e.node);
 
 	const rowMap = new Map();
@@ -92,7 +98,7 @@ export default function Team() {
 				<div className="twitter">
 					<TwitterTimelineEmbed
 						sourceType="profile"
-						screenName="labfreed"
+						screenName={twitter}
 						theme="dark"
 						autoHeight
 					/>
