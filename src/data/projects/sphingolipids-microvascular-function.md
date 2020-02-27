@@ -8,7 +8,7 @@ images:
   - src: sphingolipid-schematic.png
     alt: ""
 lead: |
-  Knowledge of how this pathway can be maniuplated my lead to novel therapies
+  Knowledge of how this pathway can be maniuplated may lead to novel therapies
   for treatment and prevention of cardiovascular disease
 ---
 
