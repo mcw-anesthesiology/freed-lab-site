@@ -18,34 +18,9 @@ module.exports = {
 			}
 		],
 		twitter: 'labfreed',
-		attributions: [
-			{
-				name: 'Project Launch',
-				image: '/images/projects.svg',
-				author: 'Arfan Khan Kamol',
-				link: 'https://thenounproject.com/icon/2038872/'
-			},
-			{
-				name: 'Goals',
-				image: '/images/goals.svg',
-				author: 'Tawny Whatmore, IE',
-				link: 'https://thenounproject.com/icon/982021/'
-			},
-			{
-				name: 'Contact',
-				image: '/images/contact.svg',
-				author: 'Ralf Schmitzer, DE',
-				link: 'https://thenounproject.com/icon/631929/'
-			},
-			{
-				name: 'Team',
-				image: '/images/team.svg',
-				author: 'Creative Stall, PK',
-				link: 'https://thenounproject.com/icon/1091926/'
-			}
-		],
 		departmentWebsite: 'www.mcw.edu/anesthesiology',
-		mailingAddress: '8701 W. Watertown Plank Road, Milwaukee, WI'
+		mailingAddress: '8701 W. Watertown Plank Road, Milwaukee, WI',
+		copyright: 'MCW Department of Anesthesiology'
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
