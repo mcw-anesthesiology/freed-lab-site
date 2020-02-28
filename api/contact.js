@@ -4,9 +4,23 @@
 const knex = require('knex');
 const { getClientIp } = require('request-ip');
 
-const knexfile = require('../knexfile.js');
-const config = knexfile[process.env.NODE_ENV || 'development'];
-const db = knex(config);
+const {
+	DB_CLIENT = 'mysql',
+	DB_HOST,
+	DB_DATABASE,
+	DB_USER,
+	DB_PASS
+} = process.env;
+
+const db = knex({
+	client: DB_CLIENT,
+	connection: {
+		host: DB_HOST,
+		database: DB_DATABASE,
+		user: DB_USER,
+		password: DB_PASS
+	}
+});
 
 const mailer = require('./mailer.js');
 const gatsbyConfig = require('../gatsby-config.js');

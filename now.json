@@ -28,7 +28,11 @@
 		"MAIL_HOST": "@freed-lab-mail-host",
 		"MAIL_USER": "@freed-lab-mail-user",
 		"MAIL_PASS": "@freed-lab-mail-pass",
-		"GATSBY_STAFF_ENDPOINT": "@staff-api-endpoint"
+		"GATSBY_STAFF_ENDPOINT": "@staff-api-endpoint",
+		"DB_HOST": "@db-host",
+		"DB_DATABASE": "@freed-lab-db",
+		"DB_USER": "@freed-lab-db-user",
+		"DB_PASS": "@freed-lab-db-pass"
 	},
 	"build": {
 		"env": {
