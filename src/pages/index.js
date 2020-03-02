@@ -28,11 +28,13 @@ export default function IndexPage({ data }) {
 					}}
 				>
 					<Fragment>
-						<Image
-							className="mcw-logo"
-							fixed={data.mcwLogo.childImageSharp.fixed}
-							alt="MCW - knowledge changing life"
-						/>
+						<a href={data.site.siteMetadata.departmentWebsite}>
+							<Image
+								className="mcw-logo"
+								fixed={data.mcwLogo.childImageSharp.fixed}
+								alt="MCW - knowledge changing life"
+							/>
+						</a>
 						<Header>
 							<h1>{data.site.siteMetadata.title}</h1>
 							<nav>
@@ -69,6 +71,7 @@ export const query = graphql`
 		site {
 			siteMetadata {
 				title
+				departmentWebsite
 			}
 		}
 		mcwLogo: file(relativePath: { eq: "icons/mcw-logo-big-white.png" }) {

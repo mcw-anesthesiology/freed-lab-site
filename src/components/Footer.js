@@ -45,7 +45,7 @@ export default function Footer() {
 					<a
 						href={meta.departmentWebsite}
 						dangerouslySetInnerHTML={{
-							__html: meta.departmentWebsite.replace(
+							__html: meta.departmentWebsite.replace('https://', '').replace(
 								'/',
 								'/<wbr>'
 							)
