@@ -56,7 +56,7 @@ export default function Team() {
 		`
 	);
 	const { twitter } = data.site.siteMetadata;
-	const teamMembers = data.allTeamYaml.edges.map(e => e.node);
+	const teamMembers = data.allTeamYaml.edges.map((e) => e.node);
 
 	const rowMap = new Map();
 
@@ -82,7 +82,7 @@ export default function Team() {
 			</Hero>
 			{rows.map(([row, members]) => (
 				<ul key={row} className="team-list">
-					{members.map(m => (
+					{members.map((m) => (
 						<TeamMember key={m.id} {...m} />
 					))}
 				</ul>

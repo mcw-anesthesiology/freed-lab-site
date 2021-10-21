@@ -2,7 +2,7 @@
 /* eslint-env node */
 
 const postcssPresetEnv = require('postcss-preset-env');
-const autoprefixer = require('autoprefixer');
+// const autoprefixer = require('autoprefixer');
 
 module.exports = {
 	siteMetadata: {
@@ -33,17 +33,17 @@ module.exports = {
 		},
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
-		{
-			resolve: `gatsby-plugin-manifest`,
-			options: {
-				name: 'Freed lab',
-				short_name: 'Freed lab',
-				start_url: '/',
-				background_color: '#EB6990',
-				theme_color: '#EB6990',
-				display: 'minimal-ui'
-			}
-		},
+		// {
+		// 	resolve: `gatsby-plugin-manifest`,
+		// 	options: {
+		// 		name: 'Freed lab',
+		// 		short_name: 'Freed lab',
+		// 		start_url: '/',
+		// 		background_color: '#EB6990',
+		// 		theme_color: '#EB6990',
+		// 		display: 'minimal-ui'
+		// 	}
+		// },
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.app/offline
 		// 'gatsby-plugin-offline',
@@ -56,8 +56,8 @@ module.exports = {
 						features: {
 							'nesting-rules': true
 						}
-					}),
-					autoprefixer()
+					})
+					// autoprefixer()
 				]
 			}
 		},

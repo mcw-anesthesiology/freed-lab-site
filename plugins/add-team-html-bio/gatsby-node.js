@@ -58,7 +58,7 @@ exports.onCreateNode = async ({ node, actions }) => {
 
 exports.setFieldsOnGraphQLNodeType = ({ type }) => {
 	if (type.name === 'TeamYaml') {
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			return resolve({
 				bioHtml: {
 					type: GraphQLString,

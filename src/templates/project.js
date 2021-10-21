@@ -10,12 +10,12 @@ import ImagesList from '../components/ImagesList.js';
 import '../styles/project.css';
 
 export default function Project({ data }) {
-	const images = data.allFile.edges.map(e => e.node);
+	const images = data.allFile.edges.map((e) => e.node);
 	const project = data.allMarkdownRemark.edges[0].node;
 
 	const getMeta = useCallback(
-		node =>
-			project.frontmatter.images.find(o =>
+		(node) =>
+			project.frontmatter.images.find((o) =>
 				node.relativePath.includes(o.src)
 			),
 		[project]
